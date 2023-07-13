@@ -1,0 +1,17 @@
+C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Data.Models\bin\Debug\net6.0\GameCatalogue.Data.Models.deps.json
+C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Data.Models\bin\Debug\net6.0\GameCatalogue.Data.Models.dll
+C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Data.Models\bin\Debug\net6.0\GameCatalogue.Data.Models.pdb
+C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Data.Models\bin\Debug\net6.0\GameCatalogue.Common.dll
+C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Data.Models\bin\Debug\net6.0\GameCatalogue.Common.pdb
+C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Data.Models\obj\Debug\net6.0\GameCatalogue.Data.Models.csproj.AssemblyReference.cache
+C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Data.Models\obj\Debug\net6.0\GameCatalogue.Data.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Data.Models\obj\Debug\net6.0\GameCatalogue.Data.Models.AssemblyInfoInputs.cache
+C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Data.Models\obj\Debug\net6.0\GameCatalogue.Data.Models.AssemblyInfo.cs
+C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Data.Models\obj\Debug\net6.0\GameCatalogue.Data.Models.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Data.Models\obj\Debug\net6.0\GameCatalogue.Data.Models.csproj.CopyComplete
+C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Data.Models\obj\Debug\net6.0\GameCatalogue.Data.Models.dll
+C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Data.Models\obj\Debug\net6.0\refint\GameCatalogue.Data.Models.dll
+C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Data.Models\obj\Debug\net6.0\GameCatalogue.Data.Models.pdb
+C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Data.Models\obj\Debug\net6.0\ref\GameCatalogue.Data.Models.dll
+C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Data.Models\bin\Debug\net6.0\GameCatalogue.Data.Models.runtimeconfig.json
+C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Data.Models\obj\Debug\net6.0\GameCatalogue.Data.Models.genruntimeconfig.cache

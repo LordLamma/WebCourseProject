@@ -1,0 +1,12 @@
+C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Common\bin\Debug\net6.0\GameCatalogue.Common.deps.json
+C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Common\bin\Debug\net6.0\GameCatalogue.Common.dll
+C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Common\bin\Debug\net6.0\GameCatalogue.Common.pdb
+C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Common\obj\Debug\net6.0\GameCatalogue.Common.csproj.AssemblyReference.cache
+C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Common\obj\Debug\net6.0\GameCatalogue.Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Common\obj\Debug\net6.0\GameCatalogue.Common.AssemblyInfoInputs.cache
+C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Common\obj\Debug\net6.0\GameCatalogue.Common.AssemblyInfo.cs
+C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Common\obj\Debug\net6.0\GameCatalogue.Common.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Common\obj\Debug\net6.0\GameCatalogue.Common.dll
+C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Common\obj\Debug\net6.0\refint\GameCatalogue.Common.dll
+C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Common\obj\Debug\net6.0\GameCatalogue.Common.pdb
+C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Common\obj\Debug\net6.0\ref\GameCatalogue.Common.dll

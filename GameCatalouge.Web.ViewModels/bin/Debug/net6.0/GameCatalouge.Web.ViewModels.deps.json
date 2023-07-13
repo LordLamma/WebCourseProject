@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "GameCatalouge.Web.ViewModels/1.0.0": {
+        "dependencies": {
+          "GameCatalogue.Common": "1.0.0"
+        },
+        "runtime": {
+          "GameCatalouge.Web.ViewModels.dll": {}
+        }
+      },
+      "GameCatalogue.Common/1.0.0": {
+        "runtime": {
+          "GameCatalogue.Common.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "GameCatalouge.Web.ViewModels/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "GameCatalogue.Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

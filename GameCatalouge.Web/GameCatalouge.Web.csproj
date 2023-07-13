@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>aspnet-GameCatalouge.Web-38f83842-972b-41a4-9d12-b14c99b329ac</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.14" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.14" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.14" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.14" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.14" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GameCatalogue.Common\GameCatalogue.Common.csproj" />
+    <ProjectReference Include="..\GameCatalogue.Data.Models\GameCatalogue.Data.Models.csproj" />
+    <ProjectReference Include="..\GameCatalogue.Data\GameCatalogue.Data.csproj" />
+    <ProjectReference Include="..\GameCatalouge.Web.ViewModels\GameCatalouge.Web.ViewModels.csproj" />
+  </ItemGroup>
+
+</Project>
