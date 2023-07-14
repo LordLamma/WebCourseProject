@@ -6,6 +6,7 @@
     {
         public Developer()
         {
+            this.Id = Guid.NewGuid();
             this.MadeGames = new HashSet<Game>();
         }
 

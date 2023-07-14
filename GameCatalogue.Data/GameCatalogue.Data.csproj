@@ -20,8 +20,4 @@
     <ProjectReference Include="..\GameCatalogue.Data.Models\GameCatalogue.Data.Models.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Configurations\Migrations\" />
-  </ItemGroup>
-
 </Project>
