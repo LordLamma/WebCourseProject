@@ -1,19 +1,23 @@
 ﻿namespace GameCatalouge.Web.Controllers
 {
+    using GameCatalogue.Services.Data.Interfaces;
     using GameCatalouge.Web.ViewModels.Home;
     using Microsoft.AspNetCore.Mvc;
     using System.Diagnostics;
     public class HomeController : Controller
     {
+        private readonly IGameService gameService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(IGameService gameService)
         {
-            
+            this.gameService = gameService;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            IEnumerable<IndexViewModel> viewModel =
+                await this.gameService.LastThreeGames();
+            return View(viewModel);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

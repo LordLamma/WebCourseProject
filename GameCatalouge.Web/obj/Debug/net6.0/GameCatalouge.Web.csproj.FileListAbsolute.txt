@@ -83,3 +83,7 @@ C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalouge.Web\bin\Deb
 C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalouge.Web\bin\Debug\net6.0\GameCatalogue.Data.Models.dll
 C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalouge.Web\bin\Debug\net6.0\GameCatalogue.Data.Models.pdb
 C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalouge.Web\bin\Debug\net6.0\appsettings.Production.json
+C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalouge.Web\bin\Debug\net6.0\GameCatalogue.Services.Data.dll
+C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalouge.Web\bin\Debug\net6.0\GameCatalogue.Web.Infrastructure.dll
+C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalouge.Web\bin\Debug\net6.0\GameCatalogue.Services.Data.pdb
+C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalouge.Web\bin\Debug\net6.0\GameCatalogue.Web.Infrastructure.pdb

@@ -2,7 +2,9 @@ namespace GameCatalouge.Web
 {
     using GameCatalogue.Data;
     using GameCatalogue.Data.Models;
+    using GameCatalogue.Services.Data;
     using Microsoft.EntityFrameworkCore;
+    using GameCatalogue.Web.Infrastructure.Extensions;
     public class Program
     {
         public static void Main(string[] args)
@@ -29,6 +31,9 @@ namespace GameCatalouge.Web
                     builder.Configuration.GetValue<int>("Identity:Password:RequiredLength");
             })
                 .AddEntityFrameworkStores<GameCatalogueDbContext>();
+
+            builder.Services.AddApplicationServices(typeof(GameService));
+
             builder.Services.AddControllersWithViews();
 
             var app = builder.Build();

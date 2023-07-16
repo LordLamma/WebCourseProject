@@ -11,6 +11,8 @@
           "GameCatalogue.Common": "1.0.0",
           "GameCatalogue.Data": "1.0.0",
           "GameCatalogue.Data.Models": "1.0.0",
+          "GameCatalogue.Services.Data": "1.0.0",
+          "GameCatalogue.Web.Infrastructure": "1.0.0",
           "GameCatalouge.Web.ViewModels": "1.0.0",
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "6.0.14",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.14",
@@ -566,6 +568,26 @@
           "GameCatalogue.Data.Models.dll": {}
         }
       },
+      "GameCatalogue.Services.Data/1.0.0": {
+        "dependencies": {
+          "GameCatalogue.Common": "1.0.0",
+          "GameCatalogue.Data": "1.0.0",
+          "GameCatalogue.Data.Models": "1.0.0",
+          "GameCatalouge.Web.ViewModels": "1.0.0"
+        },
+        "runtime": {
+          "GameCatalogue.Services.Data.dll": {}
+        }
+      },
+      "GameCatalogue.Web.Infrastructure/1.0.0": {
+        "dependencies": {
+          "GameCatalogue.Services.Data": "1.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0"
+        },
+        "runtime": {
+          "GameCatalogue.Web.Infrastructure.dll": {}
+        }
+      },
       "GameCatalouge.Web.ViewModels/1.0.0": {
         "dependencies": {
           "GameCatalogue.Common": "1.0.0"
@@ -957,6 +979,16 @@
       "sha512": ""
     },
     "GameCatalogue.Data.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "GameCatalogue.Services.Data/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "GameCatalogue.Web.Infrastructure/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
