@@ -22,8 +22,20 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Game" asp-action="All">All games</a>
                         </li>
+                        @if (this.User.Identity?.IsAuthenticated ?? false)
+                        {
+                            <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Game" asp-action="Mine">Wishlist</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Game" asp-action="Add">Add a game</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Game" asp-action="Discover">Discover</a>
+                            </li>
+                        }
                     </ul>
                     <partial name="_LoginPartial" />
                 </div>

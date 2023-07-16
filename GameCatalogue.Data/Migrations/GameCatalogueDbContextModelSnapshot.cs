@@ -51,6 +51,11 @@ namespace GameCatalogue.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<DateTime>("CreatedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValue(new DateTime(2023, 7, 16, 13, 24, 3, 276, DateTimeKind.Utc).AddTicks(7858));
+
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasMaxLength(300)
@@ -84,6 +89,7 @@ namespace GameCatalogue.Data.Migrations
                         new
                         {
                             Id = 1,
+                            CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Neon Blast: Enter a cybernetic world of neon-lit chaos. Unleash your skills, wield futuristic weapons, and fight against a corrupt regime. Fast-paced action, stunning visuals, and intense multiplayer battles await!",
                             DeveloperId = new Guid("9c9e3599-5d8c-4e84-9fe9-97528e3b3025"),
                             GenreId = 1,
@@ -93,6 +99,7 @@ namespace GameCatalogue.Data.Migrations
                         new
                         {
                             Id = 2,
+                            CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "\"Dungeoneer\": Deadly dungeons, treasures await. Procedural, perilous. Battle, survive. Unravel secrets, embrace challenge. Permadeath, endless exploration. Conquer or fall. Good luck!",
                             DeveloperId = new Guid("9c9e3599-5d8c-4e84-9fe9-97528e3b3025"),
                             GenreId = 2,

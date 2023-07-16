@@ -11,6 +11,10 @@
         public void Configure(EntityTypeBuilder<Game> builder)
         {
             builder
+                .Property(x => x.CreatedOn)
+                .HasDefaultValue(DateTime.UtcNow);
+
+            builder
                 .HasOne(ga => ga.Genre)
                 .WithMany(ge => ge.Games)
                 .HasForeignKey(ga => ga.GenreId)

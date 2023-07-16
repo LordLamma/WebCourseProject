@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GameCatalogue.Common\GameCatalogue.Common.csproj" />
+    <ProjectReference Include="..\GameCatalogue.Data.Models\GameCatalogue.Data.Models.csproj" />
+    <ProjectReference Include="..\GameCatalogue.Data\GameCatalogue.Data.csproj" />
+    <ProjectReference Include="..\GameCatalouge.Web.ViewModels\GameCatalouge.Web.ViewModels.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -28,6 +28,8 @@
 
         public string ImageURL { get; set; } = null!;
 
+        public DateTime CreatedOn { get; set; }
+
         public int GenreId { get; set; }
 
         public virtual Genre Genre { get; set; } = null!;
