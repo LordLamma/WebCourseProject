@@ -30,6 +30,7 @@
             public const string EmailRegEx = "(.*)[@](.*)\\.(.*)";
             
             public const int EmailMaxLenght = 320;
+            public const int EmailMinLenght = 6;
         }
 
         public static class Comment

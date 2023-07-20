@@ -1,8 +1,10 @@
 ﻿namespace GameCatalogue.Services.Data
 {
     using GameCatalogue.Data;
-    using GameCatalogue.Services.Data.Interfaces;
-    using Microsoft.EntityFrameworkCore;
+	using GameCatalogue.Data.Models;
+	using GameCatalogue.Services.Data.Interfaces;
+	using GameCatalouge.Web.ViewModels.Developer;
+	using Microsoft.EntityFrameworkCore;
     using System.Threading.Tasks;
 
     internal class DeveloperService : IDeveloperService
@@ -13,7 +15,29 @@
         {
             this.dbContext = dbContext;
         }
-        public async Task<bool> DeveloperExistsByUserId(string userId)
+
+		public async Task Create(string userId, BecomeDeveloperFormModel model)
+		{
+			Developer developer = new Developer()
+			{
+				BusinessEmail = model.BusinessEmail,
+				UserId = Guid.Parse(userId)
+			};
+
+			await this.dbContext.Developers.AddAsync(developer);
+			await this.dbContext.SaveChangesAsync();
+		}
+
+		public async Task<bool> DeveloperExistsByEmail(string email)
+		{
+			bool result = await this.dbContext
+				.Developers
+				.AnyAsync(d => d.BusinessEmail == email);
+
+			return result;
+		}
+
+		public async Task<bool> DeveloperExistsByUserId(string userId)
         {
             bool result = await this.dbContext
                 .Developers
