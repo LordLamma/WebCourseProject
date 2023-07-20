@@ -45,5 +45,19 @@
 
             return result;
         }
-    }
+
+		public async Task<string?> DeveloperIdByUserId(string userId)
+		{
+			Developer? developer = await this.dbContext
+				.Developers
+				.FirstOrDefaultAsync(d => d.UserId.ToString() == userId);
+
+			if (developer == null)
+			{
+				return null;
+			}
+
+			return developer.Id.ToString();
+		}
+	}
 }

@@ -8,6 +8,8 @@
 
         Task<bool> DeveloperExistsByEmail(string email);
 
+        Task<string?> DeveloperIdByUserId(string userId);
+
         Task Create(string  userId, BecomeDeveloperFormModel model);
     }
 }
