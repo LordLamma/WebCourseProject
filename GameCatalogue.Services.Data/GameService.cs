@@ -47,7 +47,7 @@ namespace GameCatalogue.Services.Data
                 GameSorting.Oldest => gamesQuery
                     .OrderBy(g => g.CreatedOn),
                 _ => gamesQuery
-                    .OrderBy(g => g.CreatedOn)
+                    .OrderByDescending(g => g.CreatedOn)
             };
 
             IEnumerable<GameAllViewModel> pagedGames = await gamesQuery
