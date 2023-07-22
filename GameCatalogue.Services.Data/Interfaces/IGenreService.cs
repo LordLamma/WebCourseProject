@@ -6,5 +6,7 @@
 	{
 		Task<IEnumerable<SelectGenreFormModel>> GetAllGenresAsync();
 		Task<bool> ExistsById(int id);
+
+		Task<IEnumerable<string>> AllGenreNamesAsync();
 	}
 }

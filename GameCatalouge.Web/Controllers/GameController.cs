@@ -1,6 +1,7 @@
 ﻿namespace GameCatalouge.Web.Controllers
 {
 	using GameCatalogue.Services.Data.Interfaces;
+	using GameCatalogue.Services.Data.Models.Game;
 	using GameCatalogue.Web.Infrastructure;
 	using GameCatalouge.Web.ViewModels.Game;
 	using Microsoft.AspNetCore.Authorization;
@@ -21,10 +22,17 @@
             this.gameService = gameService;
 		}
 
+        [HttpGet]
         [AllowAnonymous]
-        public async Task<IActionResult> All()
+        public async Task<IActionResult> All([FromQuery]AllGamesQueryModel queryModel)
         {
-            return this.Ok();
+            AllGamesFilterServiceModel serviceModel = await this.gameService.AllAsync(queryModel);
+
+            queryModel.Games = serviceModel.Games;
+            queryModel.TotalGames = serviceModel.TotalGamesCount;
+            queryModel.Genres = await this.genreService.AllGenreNamesAsync();
+
+            return this.View(queryModel);
         }
 
         [HttpGet]

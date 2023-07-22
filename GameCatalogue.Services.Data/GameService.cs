@@ -1,9 +1,11 @@
 ﻿using GameCatalogue.Data;
 using GameCatalogue.Data.Models;
 using GameCatalogue.Services.Data.Interfaces;
+using GameCatalogue.Services.Data.Models.Game;
 using GameCatalouge.Web.ViewModels.Discover;
 using GameCatalouge.Web.ViewModels.Game;
 using GameCatalouge.Web.ViewModels.Home;
+using GameCatalouge.Web.Views.Game.Enums;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -17,6 +19,57 @@ namespace GameCatalogue.Services.Data
         {
             this.dbContext = dbContext;
         }
+
+		public async Task<AllGamesFilterServiceModel> AllAsync(AllGamesQueryModel queryModel)
+		{
+			IQueryable<Game> gamesQuery = this.dbContext
+                .Games
+                .AsQueryable();
+
+            if (!string.IsNullOrWhiteSpace(queryModel.Genre))
+            {
+                gamesQuery = gamesQuery
+                    .Where(g => g.Genre.Name == queryModel.Genre);
+            }
+            if (!string.IsNullOrWhiteSpace(queryModel.SearchString))
+            {
+                string wildCard = $"%{queryModel.SearchString.ToLower()}%";
+                gamesQuery = gamesQuery
+                    .Where(g => EF.Functions.Like(g.Name, wildCard));
+            }
+
+            gamesQuery = queryModel.GameSorting switch
+            {
+                GameSorting.Alphabetical => gamesQuery
+                    .OrderBy(g => g.Name),
+                GameSorting.Newest => gamesQuery
+                    .OrderBy(g => g.CreatedOn),
+                GameSorting.Oldest => gamesQuery
+                    .OrderByDescending(g => g.CreatedOn),
+                _ => gamesQuery
+                    .OrderBy(g => g.CreatedOn)
+            };
+
+            IEnumerable<GameAllViewModel> pagedGames = await gamesQuery
+				.Skip((queryModel.CurrentPage - 1) * queryModel.GamesPerPage)
+                .Take(queryModel.GamesPerPage)
+                .Select(g => new GameAllViewModel
+                {
+                    Id = g.Id,
+                    Name = g.Name,
+                    ImageURL = g.ImageURL,
+                    Genre = g.Genre.Name
+                })
+                .ToArrayAsync();
+
+            int totalGames = gamesQuery.Count();
+
+            return new AllGamesFilterServiceModel()
+            {
+                TotalGamesCount = totalGames,
+                Games = pagedGames
+            };
+		}
 
 		public async Task Create(GameFormModel formModel, string developerId)
 		{

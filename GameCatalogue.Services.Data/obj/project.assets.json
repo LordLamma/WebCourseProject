@@ -860,6 +860,19 @@
           "bin/placeholder/GameCatalogue.Data.Models.dll": {}
         }
       },
+      "GameCatalogue.Services.Data.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "GameCatalouge.Web.ViewModels": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/GameCatalogue.Services.Data.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GameCatalogue.Services.Data.Models.dll": {}
+        }
+      },
       "GameCatalouge.Web.ViewModels/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -2144,6 +2157,11 @@
       "path": "../GameCatalogue.Data.Models/GameCatalogue.Data.Models.csproj",
       "msbuildProject": "../GameCatalogue.Data.Models/GameCatalogue.Data.Models.csproj"
     },
+    "GameCatalogue.Services.Data.Models/1.0.0": {
+      "type": "project",
+      "path": "../GameCatalogue.Services.Data.Models/GameCatalogue.Services.Data.Models.csproj",
+      "msbuildProject": "../GameCatalogue.Services.Data.Models/GameCatalogue.Services.Data.Models.csproj"
+    },
     "GameCatalouge.Web.ViewModels/1.0.0": {
       "type": "project",
       "path": "../GameCatalouge.Web.ViewModels/GameCatalouge.Web.ViewModels.csproj",
@@ -2155,6 +2173,7 @@
       "GameCatalogue.Common >= 1.0.0",
       "GameCatalogue.Data >= 1.0.0",
       "GameCatalogue.Data.Models >= 1.0.0",
+      "GameCatalogue.Services.Data.Models >= 1.0.0",
       "GameCatalouge.Web.ViewModels >= 1.0.0"
     ]
   },
@@ -2193,6 +2212,9 @@
             },
             "C:\\Users\\Admin\\source\\repos\\SoftUniWeb-CourseProjectC#\\GameCatalogue.Data\\GameCatalogue.Data.csproj": {
               "projectPath": "C:\\Users\\Admin\\source\\repos\\SoftUniWeb-CourseProjectC#\\GameCatalogue.Data\\GameCatalogue.Data.csproj"
+            },
+            "C:\\Users\\Admin\\source\\repos\\SoftUniWeb-CourseProjectC#\\GameCatalogue.Services.Data.Models\\GameCatalogue.Services.Data.Models.csproj": {
+              "projectPath": "C:\\Users\\Admin\\source\\repos\\SoftUniWeb-CourseProjectC#\\GameCatalogue.Services.Data.Models\\GameCatalogue.Services.Data.Models.csproj"
             },
             "C:\\Users\\Admin\\source\\repos\\SoftUniWeb-CourseProjectC#\\GameCatalouge.Web.ViewModels\\GameCatalouge.Web.ViewModels.csproj": {
               "projectPath": "C:\\Users\\Admin\\source\\repos\\SoftUniWeb-CourseProjectC#\\GameCatalouge.Web.ViewModels\\GameCatalouge.Web.ViewModels.csproj"

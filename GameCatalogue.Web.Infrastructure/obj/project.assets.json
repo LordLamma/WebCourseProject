@@ -867,6 +867,7 @@
           "GameCatalogue.Common": "1.0.0",
           "GameCatalogue.Data": "1.0.0",
           "GameCatalogue.Data.Models": "1.0.0",
+          "GameCatalogue.Services.Data.Models": "1.0.0",
           "GameCatalouge.Web.ViewModels": "1.0.0"
         },
         "compile": {
@@ -874,6 +875,19 @@
         },
         "runtime": {
           "bin/placeholder/GameCatalogue.Services.Data.dll": {}
+        }
+      },
+      "GameCatalogue.Services.Data.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "GameCatalouge.Web.ViewModels": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/GameCatalogue.Services.Data.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GameCatalogue.Services.Data.Models.dll": {}
         }
       },
       "GameCatalouge.Web.ViewModels/1.0.0": {
@@ -2164,6 +2178,11 @@
       "type": "project",
       "path": "../GameCatalogue.Services.Data/GameCatalogue.Services.Data.csproj",
       "msbuildProject": "../GameCatalogue.Services.Data/GameCatalogue.Services.Data.csproj"
+    },
+    "GameCatalogue.Services.Data.Models/1.0.0": {
+      "type": "project",
+      "path": "../GameCatalogue.Services.Data.Models/GameCatalogue.Services.Data.Models.csproj",
+      "msbuildProject": "../GameCatalogue.Services.Data.Models/GameCatalogue.Services.Data.Models.csproj"
     },
     "GameCatalouge.Web.ViewModels/1.0.0": {
       "type": "project",

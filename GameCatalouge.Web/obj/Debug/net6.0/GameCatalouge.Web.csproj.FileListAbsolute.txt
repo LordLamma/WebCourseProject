@@ -87,3 +87,5 @@ C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalouge.Web\bin\Deb
 C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalouge.Web\bin\Debug\net6.0\GameCatalogue.Web.Infrastructure.dll
 C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalouge.Web\bin\Debug\net6.0\GameCatalogue.Services.Data.pdb
 C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalouge.Web\bin\Debug\net6.0\GameCatalogue.Web.Infrastructure.pdb
+C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalouge.Web\bin\Debug\net6.0\GameCatalogue.Services.Data.Models.dll
+C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalouge.Web\bin\Debug\net6.0\GameCatalogue.Services.Data.Models.pdb

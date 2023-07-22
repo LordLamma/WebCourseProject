@@ -17,6 +17,16 @@
             this.dbContext = dbContext;
         }
 
+		public async Task<IEnumerable<string>> AllGenreNamesAsync()
+		{
+			IEnumerable<string> allNames = await this.dbContext
+				.Genres
+				.Select(x => x.Name)
+				.ToArrayAsync();
+
+			return allNames;
+		}
+
 		public async Task<bool> ExistsById(int id)
 		{
 			bool result = await this.dbContext

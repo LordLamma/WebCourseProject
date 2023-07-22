@@ -19,6 +19,7 @@
     <ProjectReference Include="..\GameCatalogue.Common\GameCatalogue.Common.csproj" />
     <ProjectReference Include="..\GameCatalogue.Data.Models\GameCatalogue.Data.Models.csproj" />
     <ProjectReference Include="..\GameCatalogue.Data\GameCatalogue.Data.csproj" />
+    <ProjectReference Include="..\GameCatalogue.Services.Data.Models\GameCatalogue.Services.Data.Models.csproj" />
     <ProjectReference Include="..\GameCatalogue.Services.Data\GameCatalogue.Services.Data.csproj" />
     <ProjectReference Include="..\GameCatalogue.Web.Infrastructure\GameCatalogue.Web.Infrastructure.csproj" />
     <ProjectReference Include="..\GameCatalouge.Web.ViewModels\GameCatalouge.Web.ViewModels.csproj" />

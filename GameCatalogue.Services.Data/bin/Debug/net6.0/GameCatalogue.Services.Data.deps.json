@@ -11,6 +11,7 @@
           "GameCatalogue.Common": "1.0.0",
           "GameCatalogue.Data": "1.0.0",
           "GameCatalogue.Data.Models": "1.0.0",
+          "GameCatalogue.Services.Data.Models": "1.0.0",
           "GameCatalouge.Web.ViewModels": "1.0.0"
         },
         "runtime": {
@@ -541,6 +542,14 @@
           "GameCatalogue.Data.Models.dll": {}
         }
       },
+      "GameCatalogue.Services.Data.Models/1.0.0": {
+        "dependencies": {
+          "GameCatalouge.Web.ViewModels": "1.0.0"
+        },
+        "runtime": {
+          "GameCatalogue.Services.Data.Models.dll": {}
+        }
+      },
       "GameCatalouge.Web.ViewModels/1.0.0": {
         "dependencies": {
           "GameCatalogue.Common": "1.0.0"
@@ -883,6 +892,11 @@
       "sha512": ""
     },
     "GameCatalogue.Data.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "GameCatalogue.Services.Data.Models/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

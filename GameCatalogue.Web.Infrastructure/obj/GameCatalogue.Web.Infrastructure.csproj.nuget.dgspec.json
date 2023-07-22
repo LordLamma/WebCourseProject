@@ -208,6 +208,65 @@
         }
       }
     },
+    "C:\\Users\\Admin\\source\\repos\\SoftUniWeb-CourseProjectC#\\GameCatalogue.Services.Data.Models\\GameCatalogue.Services.Data.Models.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Admin\\source\\repos\\SoftUniWeb-CourseProjectC#\\GameCatalogue.Services.Data.Models\\GameCatalogue.Services.Data.Models.csproj",
+        "projectName": "GameCatalogue.Services.Data.Models",
+        "projectPath": "C:\\Users\\Admin\\source\\repos\\SoftUniWeb-CourseProjectC#\\GameCatalogue.Services.Data.Models\\GameCatalogue.Services.Data.Models.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\source\\repos\\SoftUniWeb-CourseProjectC#\\GameCatalogue.Services.Data.Models\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\Admin\\source\\repos\\SoftUniWeb-CourseProjectC#\\GameCatalouge.Web.ViewModels\\GameCatalouge.Web.ViewModels.csproj": {
+                "projectPath": "C:\\Users\\Admin\\source\\repos\\SoftUniWeb-CourseProjectC#\\GameCatalouge.Web.ViewModels\\GameCatalouge.Web.ViewModels.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\Users\\Admin\\source\\repos\\SoftUniWeb-CourseProjectC#\\GameCatalogue.Services.Data\\GameCatalogue.Services.Data.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -240,6 +299,9 @@
               },
               "C:\\Users\\Admin\\source\\repos\\SoftUniWeb-CourseProjectC#\\GameCatalogue.Data\\GameCatalogue.Data.csproj": {
                 "projectPath": "C:\\Users\\Admin\\source\\repos\\SoftUniWeb-CourseProjectC#\\GameCatalogue.Data\\GameCatalogue.Data.csproj"
+              },
+              "C:\\Users\\Admin\\source\\repos\\SoftUniWeb-CourseProjectC#\\GameCatalogue.Services.Data.Models\\GameCatalogue.Services.Data.Models.csproj": {
+                "projectPath": "C:\\Users\\Admin\\source\\repos\\SoftUniWeb-CourseProjectC#\\GameCatalogue.Services.Data.Models\\GameCatalogue.Services.Data.Models.csproj"
               },
               "C:\\Users\\Admin\\source\\repos\\SoftUniWeb-CourseProjectC#\\GameCatalouge.Web.ViewModels\\GameCatalouge.Web.ViewModels.csproj": {
                 "projectPath": "C:\\Users\\Admin\\source\\repos\\SoftUniWeb-CourseProjectC#\\GameCatalouge.Web.ViewModels\\GameCatalouge.Web.ViewModels.csproj"
