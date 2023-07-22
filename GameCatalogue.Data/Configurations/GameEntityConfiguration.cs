@@ -12,7 +12,7 @@
         {
             builder
                 .Property(x => x.CreatedOn)
-                .HasDefaultValue(DateTime.UtcNow);
+                .HasDefaultValueSql("GETDATE()");
 
             builder
                 .HasOne(ga => ga.Genre)

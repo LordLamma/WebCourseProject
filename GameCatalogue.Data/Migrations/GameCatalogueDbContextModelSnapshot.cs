@@ -54,7 +54,7 @@ namespace GameCatalogue.Data.Migrations
                     b.Property<DateTime>("CreatedOn")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2023, 7, 16, 13, 24, 3, 276, DateTimeKind.Utc).AddTicks(7858));
+                        .HasDefaultValueSql("GETDATE()");
 
                     b.Property<string>("Description")
                         .IsRequired()

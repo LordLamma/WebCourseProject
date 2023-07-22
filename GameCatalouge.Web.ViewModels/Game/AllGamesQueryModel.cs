@@ -25,6 +25,7 @@
 
 		public int CurrentPage { get; set; }
 
+		[Display(Name = "How many games on page")]
 		public int GamesPerPage { get; set; }
 
 		public int TotalGames { get; set; }

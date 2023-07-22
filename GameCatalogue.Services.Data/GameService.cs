@@ -43,9 +43,9 @@ namespace GameCatalogue.Services.Data
                 GameSorting.Alphabetical => gamesQuery
                     .OrderBy(g => g.Name),
                 GameSorting.Newest => gamesQuery
-                    .OrderBy(g => g.CreatedOn),
-                GameSorting.Oldest => gamesQuery
                     .OrderByDescending(g => g.CreatedOn),
+                GameSorting.Oldest => gamesQuery
+                    .OrderBy(g => g.CreatedOn),
                 _ => gamesQuery
                     .OrderBy(g => g.CreatedOn)
             };
