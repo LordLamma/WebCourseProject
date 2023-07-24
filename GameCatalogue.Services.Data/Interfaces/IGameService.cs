@@ -12,6 +12,6 @@
         Task Create(GameFormModel formModel, string developerId);
         Task<AllGamesFilterServiceModel> AllAsync(AllGamesQueryModel queryModel);
 
-        Task<IEnumerable<GameAllViewModel>> AllByIdAsync(string userid);
+        Task<IEnumerable<GameAllViewModel>> AllByDeveloperIdAsync(string developerId);
     }
 }

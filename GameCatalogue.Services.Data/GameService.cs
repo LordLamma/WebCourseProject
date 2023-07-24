@@ -72,9 +72,21 @@
             };
 		}
 
-		public async Task<IEnumerable<GameAllViewModel>> AllByIdAsync(string userId)
+		public async Task<IEnumerable<GameAllViewModel>> AllByDeveloperIdAsync(string developerId)
 		{
-            throw new NotImplementedException();
+            IEnumerable<GameAllViewModel> allDeveloperGames = await this.dbContext
+                .Games
+                .Where(g => g.DeveloperId.ToString() == developerId)
+                .Select(g => new GameAllViewModel
+                {
+                    Id = g.Id,
+                    Name = g.Name,
+                    ImageURL = g.ImageURL,
+                    Genre = g.Genre.Name
+                })
+                .ToArrayAsync();
+
+            return allDeveloperGames;
 		}
 
 		public async Task Create(GameFormModel formModel, string developerId)

@@ -6,7 +6,8 @@
 	using GameCatalouge.Web.ViewModels.Game;
 	using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
-    using static GameCatalogue.Common.NotificationMessages;
+	using System.Reflection.Metadata.Ecma335;
+	using static GameCatalogue.Common.NotificationMessages;
 
     [Authorize]
     public class GameController : Controller
@@ -92,5 +93,19 @@
 
             return this.RedirectToAction("All", "Game");
 		}
+
+        [HttpGet]
+        public async Task<IActionResult> Mine()
+        {
+            List<GameAllViewModel> myGames = new List<GameAllViewModel>();
+
+            string userId = this.User.GetId()!;
+
+            string developerId = await this.developerService.DeveloperIdByUserId(userId);
+
+            myGames.AddRange(await this.gameService.AllByDeveloperIdAsync(developerId!));
+
+            return this.View(myGames);
+        }
     }
 }
