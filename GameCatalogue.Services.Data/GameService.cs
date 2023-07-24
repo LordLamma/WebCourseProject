@@ -1,17 +1,18 @@
-﻿using GameCatalogue.Data;
-using GameCatalogue.Data.Models;
-using GameCatalogue.Services.Data.Interfaces;
-using GameCatalogue.Services.Data.Models.Game;
-using GameCatalouge.Web.ViewModels.Discover;
-using GameCatalouge.Web.ViewModels.Game;
-using GameCatalouge.Web.ViewModels.Home;
-using GameCatalouge.Web.Views.Game.Enums;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-
-namespace GameCatalogue.Services.Data
+﻿namespace GameCatalogue.Services.Data
 {
-    public class GameService : IGameService
+	using GameCatalogue.Data;
+	using GameCatalogue.Data.Models;
+	using GameCatalogue.Services.Data.Interfaces;
+	using GameCatalogue.Services.Data.Models.Game;
+	using GameCatalouge.Web.ViewModels.Discover;
+	using GameCatalouge.Web.ViewModels.Game;
+	using GameCatalouge.Web.ViewModels.Home;
+	using GameCatalouge.Web.Views.Game.Enums;
+	using Microsoft.AspNetCore.Identity;
+	using Microsoft.EntityFrameworkCore;
+	using System.Data.SqlTypes;
+
+	public class GameService : IGameService
     {
         private readonly GameCatalogueDbContext dbContext;
 
@@ -69,6 +70,11 @@ namespace GameCatalogue.Services.Data
                 TotalGamesCount = totalGames,
                 Games = pagedGames
             };
+		}
+
+		public async Task<IEnumerable<GameAllViewModel>> AllByIdAsync(string userId)
+		{
+            throw new NotImplementedException();
 		}
 
 		public async Task Create(GameFormModel formModel, string developerId)

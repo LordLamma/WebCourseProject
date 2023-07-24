@@ -5,9 +5,6 @@
     {
         public ModdedUser()
         {
-            this.WishlistedGames = new HashSet<UserGame>();
         }
-
-        public virtual ICollection<UserGame> WishlistedGames { get; set; }
     }
 }

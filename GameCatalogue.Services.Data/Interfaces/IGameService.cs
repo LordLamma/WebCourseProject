@@ -10,7 +10,8 @@
         Task<IEnumerable<IndexViewModel>> LastThreeGames();
         Task<IEnumerable<DiscoverViewModel>> ThreeRandomGames();
         Task Create(GameFormModel formModel, string developerId);
-
         Task<AllGamesFilterServiceModel> AllAsync(AllGamesQueryModel queryModel);
+
+        Task<IEnumerable<GameAllViewModel>> AllByIdAsync(string userid);
     }
 }

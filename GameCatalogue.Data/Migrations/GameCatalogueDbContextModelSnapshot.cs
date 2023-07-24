@@ -224,21 +224,6 @@ namespace GameCatalogue.Data.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
-            modelBuilder.Entity("GameCatalogue.Data.Models.UserGame", b =>
-                {
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<int>("GameId")
-                        .HasColumnType("int");
-
-                    b.HasKey("UserId", "GameId");
-
-                    b.HasIndex("GameId");
-
-                    b.ToTable("UserGame");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole<System.Guid>", b =>
                 {
                     b.Property<Guid>("Id")
@@ -404,25 +389,6 @@ namespace GameCatalogue.Data.Migrations
                     b.Navigation("Genre");
                 });
 
-            modelBuilder.Entity("GameCatalogue.Data.Models.UserGame", b =>
-                {
-                    b.HasOne("GameCatalogue.Data.Models.Game", "Game")
-                        .WithMany("WishlistedCollection")
-                        .HasForeignKey("GameId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("GameCatalogue.Data.Models.ModdedUser", "User")
-                        .WithMany("WishlistedGames")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("Game");
-
-                    b.Navigation("User");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole<System.Guid>", null)
@@ -479,19 +445,9 @@ namespace GameCatalogue.Data.Migrations
                     b.Navigation("MadeGames");
                 });
 
-            modelBuilder.Entity("GameCatalogue.Data.Models.Game", b =>
-                {
-                    b.Navigation("WishlistedCollection");
-                });
-
             modelBuilder.Entity("GameCatalogue.Data.Models.Genre", b =>
                 {
                     b.Navigation("Games");
-                });
-
-            modelBuilder.Entity("GameCatalogue.Data.Models.ModdedUser", b =>
-                {
-                    b.Navigation("WishlistedGames");
                 });
 #pragma warning restore 612, 618
         }

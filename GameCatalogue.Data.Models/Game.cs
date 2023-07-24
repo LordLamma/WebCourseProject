@@ -9,7 +9,6 @@
         public Game()
         {
             //this.Comments = new HashSet<Comment>();
-            this.WishlistedCollection = new HashSet<UserGame>();
         }
 
         [Key]
@@ -37,10 +36,5 @@
         public Guid DeveloperId { get; set; }
 
         public virtual Developer Developer { get; set; } = null!;
-
-        public virtual ICollection<UserGame> WishlistedCollection { get; set; }
-
-        //public virtual ICollection<Comment> Comments { get; set; }
-
     }
 }
