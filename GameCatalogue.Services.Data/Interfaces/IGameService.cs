@@ -11,9 +11,11 @@
         Task<IEnumerable<DiscoverViewModel>> ThreeRandomGames();
         Task Create(GameFormModel formModel, string developerId);
         Task<AllGamesFilterServiceModel> AllAsync(AllGamesQueryModel queryModel);
-
         Task<IEnumerable<GameAllViewModel>> AllByDeveloperIdAsync(string developerId);
-
         Task<GameDetailsViewModel?> GetDetailsByIdAsync(string gameId);
+        Task<bool> ExistsByIdAsync(string gameId);
+        Task<GameFormModel> GetGameForEditByIdAsync(string gameId);
+        Task<bool> IsDeveloperByIdProducerOfGameByIdAsync(string gameId, string developerId);
+        Task EditGameByIdAndFormModel(string gameId, GameFormModel formModel);
     }
 }

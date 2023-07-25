@@ -47,11 +47,21 @@
                 return RedirectToAction("Become", "Developer");
             }
 
-            GameFormModel formModel = new GameFormModel()
+            try
             {
-                Genres = await this.genreService.GetAllGenresAsync()
-            };
-            return View(formModel);
+				GameFormModel formModel = new GameFormModel()
+				{
+					Genres = await this.genreService.GetAllGenresAsync()
+				};
+				return View(formModel);
+			}
+            catch (Exception)
+			{
+				this.TempData[ErrorMessage] = "An unexpected error occured! Please try again later or contact an administrator";
+				return this.RedirectToAction("Index", "Home");
+			}
+
+            
         }
 
         [HttpPost]
@@ -97,15 +107,119 @@
         [AllowAnonymous]
         public async Task<IActionResult> Details(string id)
         {
-            GameDetailsViewModel? viewModel = await this.gameService.GetDetailsByIdAsync(id);
-            if (viewModel == null)
+            bool gameExists = await this.gameService
+                .ExistsByIdAsync(id);
+
+            if (!gameExists)
             {
-                this.TempData[ErrorMessage] = "A game with the provided id does not exist!";
-                this.RedirectToAction("All", "Game");
+				this.TempData[ErrorMessage] = "A game with the provided id does not exist!";
+				return this.RedirectToAction("All", "Game");
+			}
+
+            try
+            {
+				GameDetailsViewModel viewModel = await this.gameService.GetDetailsByIdAsync(id);
+
+				return View(viewModel);
+			}
+            catch (Exception)
+			{
+				this.TempData[ErrorMessage] = "An unexpected error occured! Please try again later or contact an administrator";
+				return this.RedirectToAction("Index", "Home");
+			}
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Edit(string id)
+        {
+			bool gameExists = await this.gameService
+				.ExistsByIdAsync(id);
+
+			if (!gameExists)
+			{
+				this.TempData[ErrorMessage] = "A game with the provided id does not exist!";
+				return this.RedirectToAction("All", "Game");
+			}
+
+            bool isUserDeveloper = await this.developerService
+                .DeveloperExistsByUserId(this.User.GetId());
+            if (!isUserDeveloper) 
+            {
+                this.TempData[ErrorMessage] = "You must become a developer to edit game info";
+                return this.RedirectToAction("Become", "Developer");
             }
 
-            return View(viewModel);
-        }
+            string? devId = await this.developerService.DeveloperIdByUserId(this.User.GetId());
+            bool isDeveloperProducer = await this.gameService
+                .IsDeveloperByIdProducerOfGameByIdAsync(id, devId!);
+            if (!isDeveloperProducer)
+            {
+                this.TempData[ErrorMessage] = "You can only edit games you have published!";
+                return this.RedirectToAction("Mine", "Game");
+            }
+
+            try
+            {
+				GameFormModel formModel = await this.gameService
+				.GetGameForEditByIdAsync(id);
+				formModel.Genres = await this.genreService.GetAllGenresAsync();
+				return this.View(formModel);
+			}
+            catch (Exception)
+            {
+				this.TempData[ErrorMessage] = "An unexpected error occured! Please try again later or contact an administrator";
+				return this.RedirectToAction("Index", "Home");
+			}
+		}
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(string id,  GameFormModel formModel)
+        {
+            if (!this.ModelState.IsValid)
+            {
+                formModel.Genres = await this.genreService.GetAllGenresAsync();
+                return this.View(formModel);
+            }
+
+			bool gameExists = await this.gameService
+				.ExistsByIdAsync(id);
+
+			if (!gameExists)
+			{
+				this.TempData[ErrorMessage] = "A game with the provided id does not exist!";
+				return this.RedirectToAction("All", "Game");
+			}
+
+			bool isUserDeveloper = await this.developerService
+				.DeveloperExistsByUserId(this.User.GetId());
+			if (!isUserDeveloper)
+			{
+				this.TempData[ErrorMessage] = "You must become a developer to edit game info";
+				return this.RedirectToAction("Become", "Developer");
+			}
+
+			string? devId = await this.developerService.DeveloperIdByUserId(this.User.GetId());
+			bool isDeveloperProducer = await this.gameService
+				.IsDeveloperByIdProducerOfGameByIdAsync(id, devId!);
+			if (!isDeveloperProducer)
+			{
+				this.TempData[ErrorMessage] = "You can only edit games you have published!";
+				return this.RedirectToAction("Mine", "Game");
+			}
+
+            try
+            {
+                await this.gameService.EditGameByIdAndFormModel(id, formModel);
+            }
+            catch (Exception)
+            {
+                this.ModelState.AddModelError(String.Empty, "An unexpected error occured while trying to save your changes. Please try again later or contact an administrator!");
+                formModel.Genres = await this.genreService.GetAllGenresAsync();
+                return this.View(formModel);
+            }
+
+            return this.RedirectToAction("Details", "Game", new { id });
+		}
 
         [HttpGet]
         public async Task<IActionResult> Mine()

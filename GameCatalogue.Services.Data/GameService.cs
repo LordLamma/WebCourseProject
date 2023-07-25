@@ -105,18 +105,36 @@
             await dbContext.SaveChangesAsync();
 		}
 
-		public async Task<GameDetailsViewModel?> GetDetailsByIdAsync(string gameId)
+		public async Task EditGameByIdAndFormModel(string gameId, GameFormModel formModel)
+		{
+            Game game = await this.dbContext
+                .Games
+                .FirstAsync(g => g.Id.ToString() == gameId);
+
+            game.Name = formModel.Name;
+            game.Description = formModel.Description;
+            game.ImageURL = formModel.ImageURL;
+            game.GenreId = formModel.GenreId;
+
+            await this.dbContext.SaveChangesAsync();
+		}
+
+		public async Task<bool> ExistsByIdAsync(string gameId)
+		{
+            bool exists = await this.dbContext
+                .Games
+                .AnyAsync(g => g.Id.ToString() == gameId);
+
+            return exists;
+		}
+
+		public async Task<GameDetailsViewModel> GetDetailsByIdAsync(string gameId)
 		{
             Game game = await this.dbContext
                 .Games
                 .Include(g => g.Genre)
                 .Include(g => g.Developer)
-                .FirstOrDefaultAsync(g => g.Id.ToString() == gameId);
-
-            if (game == null)
-            {
-                return null;
-            }
+                .FirstAsync(g => g.Id.ToString() == gameId);
 
             return new GameDetailsViewModel
             {
@@ -130,6 +148,31 @@
                     BusinessEmail = game.Developer.BusinessEmail
                 }
             };
+		}
+
+		public async Task<GameFormModel> GetGameForEditByIdAsync(string gameId)
+		{
+			Game game = await this.dbContext
+				.Games
+				.Include(g => g.Genre)
+				.FirstAsync(g => g.Id.ToString() == gameId);
+
+            return new GameFormModel
+            {
+                Name = game.Name,
+                Description = game.Description,
+                ImageURL = game.ImageURL,
+                GenreId = game.Genre.Id
+            };
+		}
+
+		public async Task<bool> IsDeveloperByIdProducerOfGameByIdAsync(string gameId, string developerId)
+		{
+            Game game = await this.dbContext
+                .Games
+                .FirstAsync(g => g.Id.ToString() == gameId);
+
+            return game.DeveloperId.ToString() == developerId;
 		}
 
 		public async Task<IEnumerable<IndexViewModel>> LastThreeGames()
