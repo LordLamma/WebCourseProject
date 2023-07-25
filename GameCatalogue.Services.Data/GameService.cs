@@ -5,6 +5,7 @@
 	using GameCatalogue.Services.Data.Interfaces;
 	using GameCatalogue.Services.Data.Models.Game;
 	using GameCatalouge.Web.ViewModels.Discover;
+    using GameCatalouge.Web.ViewModels.Developer;
 	using GameCatalouge.Web.ViewModels.Game;
 	using GameCatalouge.Web.ViewModels.Home;
 	using GameCatalouge.Web.Views.Game.Enums;
@@ -102,6 +103,33 @@
 
             dbContext.Games.Add(newGame);
             await dbContext.SaveChangesAsync();
+		}
+
+		public async Task<GameDetailsViewModel?> GetDetailsByIdAsync(string gameId)
+		{
+            Game game = await this.dbContext
+                .Games
+                .Include(g => g.Genre)
+                .Include(g => g.Developer)
+                .FirstOrDefaultAsync(g => g.Id.ToString() == gameId);
+
+            if (game == null)
+            {
+                return null;
+            }
+
+            return new GameDetailsViewModel
+            {
+                Id = game.Id,
+                Name = game.Name,
+                Description = game.Description,
+                ImageURL = game.ImageURL,
+                Genre = game.Genre.Name,
+                Developer = new DeveloperDetailsInfoViewModel()
+                {
+                    BusinessEmail = game.Developer.BusinessEmail
+                }
+            };
 		}
 
 		public async Task<IEnumerable<IndexViewModel>> LastThreeGames()

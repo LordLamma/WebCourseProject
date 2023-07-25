@@ -93,6 +93,19 @@
 
             return this.RedirectToAction("All", "Game");
 		}
+        [HttpGet]
+        [AllowAnonymous]
+        public async Task<IActionResult> Details(string id)
+        {
+            GameDetailsViewModel? viewModel = await this.gameService.GetDetailsByIdAsync(id);
+            if (viewModel == null)
+            {
+                this.TempData[ErrorMessage] = "A game with the provided id does not exist!";
+                this.RedirectToAction("All", "Game");
+            }
+
+            return View(viewModel);
+        }
 
         [HttpGet]
         public async Task<IActionResult> Mine()

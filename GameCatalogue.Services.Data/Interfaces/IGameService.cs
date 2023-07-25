@@ -13,5 +13,7 @@
         Task<AllGamesFilterServiceModel> AllAsync(AllGamesQueryModel queryModel);
 
         Task<IEnumerable<GameAllViewModel>> AllByDeveloperIdAsync(string developerId);
+
+        Task<GameDetailsViewModel?> GetDetailsByIdAsync(string gameId);
     }
 }
