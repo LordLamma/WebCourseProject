@@ -15,6 +15,10 @@
                 .HasDefaultValueSql("GETDATE()");
 
             builder
+                .Property(x => x.IsDeleted)
+                .HasDefaultValue(false);
+
+            builder
                 .HasOne(ga => ga.Genre)
                 .WithMany(ge => ge.Games)
                 .HasForeignKey(ga => ga.GenreId)

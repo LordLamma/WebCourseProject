@@ -57,11 +57,8 @@
 			}
             catch (Exception)
 			{
-				this.TempData[ErrorMessage] = "An unexpected error occured! Please try again later or contact an administrator";
-				return this.RedirectToAction("Index", "Home");
+				return this.GeneralError();
 			}
-
-            
         }
 
         [HttpPost]
@@ -92,8 +89,12 @@
             try
             {
                 string? developerId = await this.developerService.DeveloperIdByUserId(this.User.GetId()!);
-                await this.gameService.Create(formModel, developerId!);
-            }
+                string gameId = 
+                    await this.gameService.Create(formModel, developerId!);
+                this.TempData[SuccessMessage] = "The game was published successfully!";
+
+				return this.RedirectToAction("Details", "Game", new { id = gameId });
+			}
             catch (Exception)
             {
                 this.ModelState.AddModelError(string.Empty, "An unexpected error occured while trying to add the game! Please try again later or contact us!");
@@ -101,7 +102,6 @@
 				return this.View(formModel);
             }
 
-            return this.RedirectToAction("All", "Game");
 		}
         [HttpGet]
         [AllowAnonymous]
@@ -124,8 +124,7 @@
 			}
             catch (Exception)
 			{
-				this.TempData[ErrorMessage] = "An unexpected error occured! Please try again later or contact an administrator";
-				return this.RedirectToAction("Index", "Home");
+				return this.GeneralError();
 			}
         }
 
@@ -167,8 +166,7 @@
 			}
             catch (Exception)
             {
-				this.TempData[ErrorMessage] = "An unexpected error occured! Please try again later or contact an administrator";
-				return this.RedirectToAction("Index", "Home");
+                return this.GeneralError();
 			}
 		}
 
@@ -217,8 +215,92 @@
                 formModel.Genres = await this.genreService.GetAllGenresAsync();
                 return this.View(formModel);
             }
+			this.TempData[SuccessMessage] = "Changes saved successfully!";
+			return this.RedirectToAction("Details", "Game", new { id });
+		}
 
-            return this.RedirectToAction("Details", "Game", new { id });
+        [HttpGet]
+        public async Task<IActionResult> Delete(string id)
+        {
+			bool gameExists = await this.gameService
+				.ExistsByIdAsync(id);
+
+			if (!gameExists)
+			{
+				this.TempData[ErrorMessage] = "A game with the provided id does not exist!";
+				return this.RedirectToAction("All", "Game");
+			}
+
+			bool isUserDeveloper = await this.developerService
+				.DeveloperExistsByUserId(this.User.GetId());
+			if (!isUserDeveloper)
+			{
+				this.TempData[ErrorMessage] = "You must become a developer to edit game info";
+				return this.RedirectToAction("Become", "Developer");
+			}
+
+			string? devId = await this.developerService.DeveloperIdByUserId(this.User.GetId());
+			bool isDeveloperProducer = await this.gameService
+				.IsDeveloperByIdProducerOfGameByIdAsync(id, devId!);
+			if (!isDeveloperProducer)
+			{
+				this.TempData[ErrorMessage] = "You can only delete games you have published!";
+				return this.RedirectToAction("Mine", "Game");
+			}
+
+            try
+            {
+                GamePreDeleteDetailsViewModel viewModel = 
+                    await this.gameService.GetGameDetailsForDeleteByIdAsync(id);
+
+                return this.View(viewModel);
+            }
+            catch (Exception)
+            {
+                return this.GeneralError();
+            }
+		}
+
+        [HttpPost]
+        public async Task<IActionResult> Delete(string id, GamePreDeleteDetailsViewModel viewModel)
+        {
+			bool gameExists = await this.gameService
+				.ExistsByIdAsync(id);
+
+			if (!gameExists)
+			{
+				this.TempData[ErrorMessage] = "A game with the provided id does not exist!";
+				return this.RedirectToAction("All", "Game");
+			}
+
+			bool isUserDeveloper = await this.developerService
+				.DeveloperExistsByUserId(this.User.GetId());
+			if (!isUserDeveloper)
+			{
+				this.TempData[ErrorMessage] = "You must become a developer to edit game info";
+				return this.RedirectToAction("Become", "Developer");
+			}
+
+			string? devId = await this.developerService.DeveloperIdByUserId(this.User.GetId());
+			bool isDeveloperProducer = await this.gameService
+				.IsDeveloperByIdProducerOfGameByIdAsync(id, devId!);
+			if (!isDeveloperProducer)
+			{
+				this.TempData[ErrorMessage] = "You can only delete games you have published!";
+				return this.RedirectToAction("Mine", "Game");
+			}
+
+            try
+            {
+                await this.gameService.DeleteGameByIdAsync(id);
+
+                this.TempData[WarningMessage] = "The game has successfully been deleted!";
+                return this.RedirectToAction("Mine", "Game");
+            }
+            catch (Exception)
+            {
+                return this.GeneralError();
+            }
 		}
 
         [HttpGet]
@@ -228,11 +310,24 @@
 
             string userId = this.User.GetId()!;
 
-            string developerId = await this.developerService.DeveloperIdByUserId(userId);
+            try
+            {
+				string developerId = await this.developerService.DeveloperIdByUserId(userId);
 
-            myGames.AddRange(await this.gameService.AllByDeveloperIdAsync(developerId!));
+				myGames.AddRange(await this.gameService.AllByDeveloperIdAsync(developerId!));
 
-            return this.View(myGames);
+				return this.View(myGames);
+			}
+            catch (Exception)
+            {
+                return this.GeneralError();
+            }
         }
+
+        private IActionResult GeneralError()
+        {
+			this.TempData[ErrorMessage] = "An unexpected error occured! Please try again later or contact an administrator";
+			return this.RedirectToAction("Index", "Home");
+		}
     }
 }

@@ -26,7 +26,8 @@
 		{
 			IQueryable<Game> gamesQuery = this.dbContext
                 .Games
-                .AsQueryable();
+                .Where(g => g.IsDeleted == false)
+				.AsQueryable();
 
             if (!string.IsNullOrWhiteSpace(queryModel.Genre))
             {
@@ -77,6 +78,7 @@
 		{
             IEnumerable<GameAllViewModel> allDeveloperGames = await this.dbContext
                 .Games
+                .Where(g => g.IsDeleted == false)
                 .Where(g => g.DeveloperId.ToString() == developerId)
                 .Select(g => new GameAllViewModel
                 {
@@ -90,7 +92,7 @@
             return allDeveloperGames;
 		}
 
-		public async Task Create(GameFormModel formModel, string developerId)
+		public async Task<string> Create(GameFormModel formModel, string developerId)
 		{
             Game newGame = new Game()
             {
@@ -103,12 +105,27 @@
 
             dbContext.Games.Add(newGame);
             await dbContext.SaveChangesAsync();
+
+            return newGame.Id.ToString();
+		}
+
+		public async Task DeleteGameByIdAsync(string gameId)
+		{
+            Game game = await this.dbContext
+                .Games
+                .Where(g => g.IsDeleted == false)
+                .FirstAsync(g => g.Id.ToString() == gameId);
+
+            game.IsDeleted = true;
+
+            await this.dbContext.SaveChangesAsync();
 		}
 
 		public async Task EditGameByIdAndFormModel(string gameId, GameFormModel formModel)
 		{
             Game game = await this.dbContext
                 .Games
+                .Where(g => g.IsDeleted == false)
                 .FirstAsync(g => g.Id.ToString() == gameId);
 
             game.Name = formModel.Name;
@@ -134,7 +151,8 @@
                 .Games
                 .Include(g => g.Genre)
                 .Include(g => g.Developer)
-                .FirstAsync(g => g.Id.ToString() == gameId);
+				.Where(g => g.IsDeleted == false)
+				.FirstAsync(g => g.Id.ToString() == gameId);
 
             return new GameDetailsViewModel
             {
@@ -150,11 +168,27 @@
             };
 		}
 
+		public async Task<GamePreDeleteDetailsViewModel> GetGameDetailsForDeleteByIdAsync(string gameId)
+		{
+            Game game = await this.dbContext
+                .Games
+				.Where(g => g.IsDeleted == false)
+				.FirstAsync(g => g.Id.ToString() == gameId);
+
+            return new GamePreDeleteDetailsViewModel()
+            {
+                Name = game.Name,
+                Description = game.Description,
+                ImageURL = game.ImageURL
+            };
+		}
+
 		public async Task<GameFormModel> GetGameForEditByIdAsync(string gameId)
 		{
 			Game game = await this.dbContext
 				.Games
 				.Include(g => g.Genre)
+				.Where(g => g.IsDeleted == false)
 				.FirstAsync(g => g.Id.ToString() == gameId);
 
             return new GameFormModel
@@ -170,7 +204,8 @@
 		{
             Game game = await this.dbContext
                 .Games
-                .FirstAsync(g => g.Id.ToString() == gameId);
+				.Where(g => g.IsDeleted == false)
+				.FirstAsync(g => g.Id.ToString() == gameId);
 
             return game.DeveloperId.ToString() == developerId;
 		}
