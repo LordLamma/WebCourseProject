@@ -1,4 +1,13 @@
-﻿@model GameAllViewModel
+﻿@using GameCatalogue.Services.Data.Interfaces;
+@using GameCatalogue.Web.Infrastructure;
+@model GameAllViewModel
+
+@inject IDeveloperService DeveloperService
+@{
+	bool isUserDeveloper = await DeveloperService.DeveloperExistsByUserId(this.User.GetId());
+	bool isDeveloperProducer = await DeveloperService.HasGameWithId(this.User.GetId(), Model.Id);
+}
+
 <div class="col-md-4">
 	<div class="card mb-3">
 		<img class="card-img-top" src="@Model.ImageURL" alt="Game Image">
@@ -9,10 +18,13 @@
 				class="btn btn-success">Details</a>
 			@if (this.User.Identity?.IsAuthenticated ?? false)
 			{
-				<a asp-controller="Game" asp-action="Edit" asp-route-id="@Model.Id"
-				class="btn btn-warning">Edit</a>
-				<a asp-controller="Game" asp-action="Delete" asp-route-id="@Model.Id"
-				class="btn btn-danger">Delete</a>
+				@if (isUserDeveloper && isDeveloperProducer)
+				{
+					<a asp-controller="Game" asp-action="Edit" asp-route-id="@Model.Id"
+					class="btn btn-warning">Edit</a>
+					<a asp-controller="Game" asp-action="Delete" asp-route-id="@Model.Id"
+					class="btn btn-danger">Delete</a>
+				}
 				<p></p>
 			}
 		</div>

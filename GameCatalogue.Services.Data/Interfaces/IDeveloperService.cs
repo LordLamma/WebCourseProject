@@ -5,11 +5,9 @@
 	public interface IDeveloperService
     {
         Task<bool> DeveloperExistsByUserId(string userId);
-
         Task<bool> DeveloperExistsByEmail(string email);
-
         Task<string?> DeveloperIdByUserId(string userId);
-
         Task Create(string  userId, BecomeDeveloperFormModel model);
+        Task<bool> HasGameWithId(string userId, int gameId);
     }
 }

@@ -59,5 +59,18 @@
 
 			return developer.Id.ToString();
 		}
-	}
+
+        public async Task<bool> HasGameWithId(string userId, int gameId)
+        {
+			Developer? developer = await this.dbContext
+				.Developers
+				.Include(d => d.MadeGames)
+				.FirstOrDefaultAsync(d => d.UserId.ToString() == userId);
+			if (developer == null)
+			{
+				return false;
+			}
+			return developer.MadeGames.Any(g => g.Id == gameId);
+        }
+    }
 }

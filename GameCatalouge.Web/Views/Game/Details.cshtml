@@ -1,7 +1,16 @@
-﻿@model GameDetailsViewModel
+﻿@using GameCatalogue.Services.Data.Interfaces;
+@using GameCatalogue.Web.Infrastructure;
+@model GameDetailsViewModel
+
+@inject IDeveloperService DeveloperService
 @{
- ViewBag.Title = "Game Details";
+	
+	ViewBag.Title = "Game Details";
+
+	bool isUserDeveloper = await DeveloperService.DeveloperExistsByUserId(this.User.GetId());
+	bool isDeveloperProducer = await DeveloperService.HasGameWithId(this.User.GetId(), Model.Id);
 }
+
 
 <h2 class="text-center">@ViewBag.Title</h2>
 <hr />
@@ -19,8 +28,11 @@
 				<div class="form-inline">
 					@if (this.User.Identity?.IsAuthenticated ?? false)
 					{
-						<a class="btn btn-warning" asp-controller="Game" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
-						<a class="ml-2 btn btn-danger" asp-controller="Game" asp-action="Delete" asp-route-id="@Model.Id">Delete</a>
+						@if (isUserDeveloper && isDeveloperProducer)
+						{
+							<a class="btn btn-warning" asp-controller="Game" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+							<a class="ml-2 btn btn-danger" asp-controller="Game" asp-action="Delete" asp-route-id="@Model.Id">Delete</a>
+						}
 					}
 				</div>
 				<p></p>

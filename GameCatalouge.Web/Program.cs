@@ -6,6 +6,7 @@ namespace GameCatalouge.Web
     using Microsoft.EntityFrameworkCore;
     using GameCatalogue.Web.Infrastructure.Extensions;
 	using GameCatalouge.Web.Controllers;
+	using Microsoft.AspNetCore.Mvc;
 
 	public class Program
     {
@@ -36,7 +37,12 @@ namespace GameCatalouge.Web
 
             builder.Services.AddApplicationServices(typeof(GameService));
 
-            builder.Services.AddControllersWithViews();
+            builder.Services
+                .AddControllersWithViews()
+                .AddMvcOptions(options =>
+                {
+                    options.Filters.Add<AutoValidateAntiforgeryTokenAttribute>();
+                });
 
             var app = builder.Build();
 
@@ -47,7 +53,7 @@ namespace GameCatalouge.Web
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
+                app.UseExceptionHandler("/Home/Error/500");
                 app.UseStatusCodePagesWithRedirects("/Home/Error?statusCode={0}");
 
                 app.UseHsts();
