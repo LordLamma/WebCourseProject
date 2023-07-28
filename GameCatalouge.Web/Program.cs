@@ -5,7 +5,9 @@ namespace GameCatalouge.Web
     using GameCatalogue.Services.Data;
     using Microsoft.EntityFrameworkCore;
     using GameCatalogue.Web.Infrastructure.Extensions;
-    public class Program
+	using GameCatalouge.Web.Controllers;
+
+	public class Program
     {
         public static void Main(string[] args)
         {
@@ -46,6 +48,8 @@ namespace GameCatalouge.Web
             else
             {
                 app.UseExceptionHandler("/Home/Error");
+                app.UseStatusCodePagesWithRedirects("/Home/Error?statusCode={0}");
+
                 app.UseHsts();
             }
 
