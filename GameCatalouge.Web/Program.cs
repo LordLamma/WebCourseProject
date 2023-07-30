@@ -1,3 +1,6 @@
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using GameCatalogue.Data;
 namespace GameCatalouge.Web
 {
     using GameCatalogue.Data;
@@ -36,6 +39,11 @@ namespace GameCatalouge.Web
                 .AddEntityFrameworkStores<GameCatalogueDbContext>();
 
             builder.Services.AddApplicationServices(typeof(GameService));
+
+            builder.Services.ConfigureApplicationCookie(cnf =>
+            {
+                cnf.LoginPath = "/User/Login";
+            });
 
             builder.Services
                 .AddControllersWithViews()

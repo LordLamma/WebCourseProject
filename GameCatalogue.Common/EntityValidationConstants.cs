@@ -33,6 +33,15 @@
             public const int EmailMinLenght = 6;
         }
 
+        public static class User
+        {
+            public const int DisplayNameMinLength = 3;
+            public const int DisplayNameMaxLength = 30;
+
+            public const int PassWordMinLength = 6;
+			public const int PassWordMaxLength = 100;
+		}
+
         public static class Comment
         {
             public const int MessageMinLenght = 4;

@@ -1,10 +1,18 @@
 ﻿namespace GameCatalogue.Data.Models
 {
     using Microsoft.AspNetCore.Identity;
-    public class ModdedUser : IdentityUser<Guid>
+	using System.ComponentModel.DataAnnotations;
+    using static GameCatalogue.Common.EntityValidationConstants.User;
+
+	public class ModdedUser : IdentityUser<Guid>
     {
         public ModdedUser()
         {
+            this.Id = Guid.NewGuid();
         }
+
+        [Required]
+        [MaxLength(DisplayNameMaxLength)]
+        public string DisplayName { get; set; } = null!;
     }
 }
