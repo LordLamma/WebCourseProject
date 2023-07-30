@@ -36,8 +36,8 @@
 
 			ModdedUser user = new ModdedUser();
 
-			await this.userManager.SetUserNameAsync(user, formModel.Email);
-			await this.userManager.SetEmailAsync(user, formModel.DisplayName);
+			await this.userManager.SetUserNameAsync(user, formModel.DisplayName);
+			await this.userManager.SetEmailAsync(user, formModel.Email);
 
 			IdentityResult result = await this.userManager.CreateAsync(user, formModel.Password);
 			if (!result.Succeeded) 

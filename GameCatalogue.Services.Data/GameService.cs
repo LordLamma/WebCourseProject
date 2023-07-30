@@ -151,6 +151,7 @@
                 .Games
                 .Include(g => g.Genre)
                 .Include(g => g.Developer)
+                .ThenInclude(d => d.User)
 				.Where(g => g.IsDeleted == false)
 				.FirstAsync(g => g.Id.ToString() == gameId);
 
@@ -163,6 +164,7 @@
                 Genre = game.Genre.Name,
                 Developer = new DeveloperDetailsInfoViewModel()
                 {
+                    DisplayName = game.Developer.User.UserName,
                     BusinessEmail = game.Developer.BusinessEmail
                 }
             };
