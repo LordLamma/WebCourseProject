@@ -1,15 +1,14 @@
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-using GameCatalogue.Data;
 namespace GameCatalouge.Web
 {
-    using GameCatalogue.Data;
+	using Microsoft.AspNetCore.Identity;
+	using Microsoft.EntityFrameworkCore;
+	using GameCatalogue.Data;
     using GameCatalogue.Data.Models;
     using GameCatalogue.Services.Data;
-    using Microsoft.EntityFrameworkCore;
     using GameCatalogue.Web.Infrastructure.Extensions;
 	using GameCatalouge.Web.Controllers;
 	using Microsoft.AspNetCore.Mvc;
+    using static GameCatalogue.Common.GeneralConstants;
 
 	public class Program
     {
@@ -36,6 +35,7 @@ namespace GameCatalouge.Web
                 options.Password.RequiredLength = 
                     builder.Configuration.GetValue<int>("Identity:Password:RequiredLength");
             })
+                .AddRoles<IdentityRole<Guid>>()
                 .AddEntityFrameworkStores<GameCatalogueDbContext>();
 
             builder.Services.AddApplicationServices(typeof(GameService));
@@ -74,6 +74,8 @@ namespace GameCatalouge.Web
 
             app.UseAuthentication();
             app.UseAuthorization();
+
+            app.SeedAdmin(DevelopmentAdminEmail);
 
             app.MapDefaultControllerRoute();
             app.MapRazorPages();
