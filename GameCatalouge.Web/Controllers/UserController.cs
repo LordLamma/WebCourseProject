@@ -74,7 +74,8 @@
 			}
 
             var result = 
-				await this.signInManager.PasswordSignInAsync(formModel.Email, formModel.Password, formModel.RememberMe, false);
+				await this.signInManager.PasswordSignInAsync(formModel.DisplayName, formModel.Password, formModel.RememberMe, false);
+
 			if (!result.Succeeded) 
 			{
 				TempData[ErrorMessage] = "There was an error while logging you in! Please try again later or contact us.";

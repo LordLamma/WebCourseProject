@@ -142,7 +142,7 @@
 
             bool isUserDeveloper = await this.developerService
                 .DeveloperExistsByUserId(this.User.GetId());
-            if (!isUserDeveloper) 
+            if (!isUserDeveloper && !this.User.IsAdmin()) 
             {
                 this.TempData[ErrorMessage] = "You must become a developer to edit game info";
                 return this.RedirectToAction("Become", "Developer");
@@ -151,7 +151,7 @@
             string? devId = await this.developerService.DeveloperIdByUserId(this.User.GetId());
             bool isDeveloperProducer = await this.gameService
                 .IsDeveloperByIdProducerOfGameByIdAsync(id, devId!);
-            if (!isDeveloperProducer)
+            if (!isDeveloperProducer && !this.User.IsAdmin())
             {
                 this.TempData[ErrorMessage] = "You can only edit games you have published!";
                 return this.RedirectToAction("Mine", "Game");
@@ -190,7 +190,7 @@
 
 			bool isUserDeveloper = await this.developerService
 				.DeveloperExistsByUserId(this.User.GetId());
-			if (!isUserDeveloper)
+			if (!isUserDeveloper && !this.User.IsAdmin())
 			{
 				this.TempData[ErrorMessage] = "You must become a developer to edit game info";
 				return this.RedirectToAction("Become", "Developer");
@@ -199,7 +199,7 @@
 			string? devId = await this.developerService.DeveloperIdByUserId(this.User.GetId());
 			bool isDeveloperProducer = await this.gameService
 				.IsDeveloperByIdProducerOfGameByIdAsync(id, devId!);
-			if (!isDeveloperProducer)
+			if (!isDeveloperProducer && !this.User.IsAdmin())
 			{
 				this.TempData[ErrorMessage] = "You can only edit games you have published!";
 				return this.RedirectToAction("Mine", "Game");
@@ -233,16 +233,16 @@
 
 			bool isUserDeveloper = await this.developerService
 				.DeveloperExistsByUserId(this.User.GetId());
-			if (!isUserDeveloper)
+			if (!isUserDeveloper && !this.User.IsAdmin())
 			{
-				this.TempData[ErrorMessage] = "You must become a developer to edit game info";
+				this.TempData[ErrorMessage] = "You must become a developer to delete games";
 				return this.RedirectToAction("Become", "Developer");
 			}
 
 			string? devId = await this.developerService.DeveloperIdByUserId(this.User.GetId());
 			bool isDeveloperProducer = await this.gameService
 				.IsDeveloperByIdProducerOfGameByIdAsync(id, devId!);
-			if (!isDeveloperProducer)
+			if (!isDeveloperProducer && !this.User.IsAdmin())
 			{
 				this.TempData[ErrorMessage] = "You can only delete games you have published!";
 				return this.RedirectToAction("Mine", "Game");
@@ -275,16 +275,16 @@
 
 			bool isUserDeveloper = await this.developerService
 				.DeveloperExistsByUserId(this.User.GetId());
-			if (!isUserDeveloper)
+			if (!isUserDeveloper && !this.User.IsAdmin())
 			{
-				this.TempData[ErrorMessage] = "You must become a developer to edit game info";
+				this.TempData[ErrorMessage] = "You must become a developer to delete games";
 				return this.RedirectToAction("Become", "Developer");
 			}
 
 			string? devId = await this.developerService.DeveloperIdByUserId(this.User.GetId());
 			bool isDeveloperProducer = await this.gameService
 				.IsDeveloperByIdProducerOfGameByIdAsync(id, devId!);
-			if (!isDeveloperProducer)
+			if (!isDeveloperProducer && !this.User.IsAdmin())
 			{
 				this.TempData[ErrorMessage] = "You can only delete games you have published!";
 				return this.RedirectToAction("Mine", "Game");

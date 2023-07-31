@@ -18,7 +18,7 @@
 				class="btn btn-success">Details</a>
 			@if (this.User.Identity?.IsAuthenticated ?? false)
 			{
-				@if (isUserDeveloper && isDeveloperProducer)
+				@if ((isUserDeveloper && isDeveloperProducer) || this.User.IsAdmin())
 				{
 					<a asp-controller="Game" asp-action="Edit" asp-route-id="@Model.Id"
 					class="btn btn-warning">Edit</a>

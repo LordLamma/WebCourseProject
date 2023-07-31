@@ -4,8 +4,7 @@
 	public class LoginFormModel
 	{
 		[Required]
-		[EmailAddress]
-		public string Email { get; set; } = null!;
+		public string DisplayName { get; set; } = null!;
 
 		[Required]
 		[DataType(DataType.Password)]

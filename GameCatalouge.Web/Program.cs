@@ -75,7 +75,10 @@ namespace GameCatalouge.Web
             app.UseAuthentication();
             app.UseAuthorization();
 
-            app.SeedAdmin(DevelopmentAdminEmail);
+            if (app.Environment.IsDevelopment())
+            {
+				app.SeedAdmin(DevelopmentAdminEmail);
+			}
 
             app.MapDefaultControllerRoute();
             app.MapRazorPages();

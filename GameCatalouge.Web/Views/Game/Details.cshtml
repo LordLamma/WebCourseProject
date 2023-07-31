@@ -28,7 +28,7 @@
 				<div class="form-inline">
 					@if (this.User.Identity?.IsAuthenticated ?? false)
 					{
-						@if (isUserDeveloper && isDeveloperProducer)
+						@if ((isUserDeveloper && isDeveloperProducer) || this.User.IsAdmin())
 						{
 							<a class="btn btn-warning" asp-controller="Game" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
 							<a class="ml-2 btn btn-danger" asp-controller="Game" asp-action="Delete" asp-route-id="@Model.Id">Delete</a>
