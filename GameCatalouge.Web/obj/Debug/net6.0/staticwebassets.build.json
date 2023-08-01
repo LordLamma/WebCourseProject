@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "n2ewXSQCRAlO15aCKQjWnCsU7SooN5v+c7ytMbYH49k=",
+  "Hash": "LWg0VxYiVUQNfTCq44FrujwpqUpDY3gTOLjdcG9Gjmg=",
   "Source": "GameCatalouge.Web",
   "BasePath": "_content/GameCatalouge.Web",
   "Mode": "Default",
@@ -1071,6 +1071,23 @@
       "OriginalItemSpec": "C:\\Users\\Admin\\source\\repos\\SoftUniWeb-CourseProjectC#\\GameCatalouge.Web\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\GameCatalouge.Web.bundle.scp.css"
     },
     {
+      "Identity": "C:\\Users\\Admin\\source\\repos\\SoftUniWeb-CourseProjectC#\\GameCatalouge.Web\\wwwroot\\css\\Font.css",
+      "SourceId": "GameCatalouge.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\source\\repos\\SoftUniWeb-CourseProjectC#\\GameCatalouge.Web\\wwwroot\\",
+      "BasePath": "_content/GameCatalouge.Web",
+      "RelativePath": "css/Font.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Font.css"
+    },
+    {
       "Identity": "C:\\Users\\Admin\\source\\repos\\SoftUniWeb-CourseProjectC#\\GameCatalouge.Web\\wwwroot\\css\\site.css",
       "SourceId": "GameCatalouge.Web",
       "SourceType": "Discovered",
@@ -1086,6 +1103,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\source\\repos\\SoftUniWeb-CourseProjectC#\\GameCatalouge.Web\\wwwroot\\css\\Theme.css",
+      "SourceId": "GameCatalouge.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\source\\repos\\SoftUniWeb-CourseProjectC#\\GameCatalouge.Web\\wwwroot\\",
+      "BasePath": "_content/GameCatalouge.Web",
+      "RelativePath": "css/Theme.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Theme.css"
     },
     {
       "Identity": "C:\\Users\\Admin\\source\\repos\\SoftUniWeb-CourseProjectC#\\GameCatalouge.Web\\wwwroot\\favicon.ico",
