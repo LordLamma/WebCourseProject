@@ -7,6 +7,7 @@
         public const int StartingPage = 1;
         public const int AllowedGamesPerPage = 3;
 
+        public const string AdminAreaName = "Admin";
         public const string AdminRoleName = "Admin";
         public const string DevelopmentAdminEmail = "admin@mail.com";
     }

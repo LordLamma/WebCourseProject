@@ -2,7 +2,8 @@
 {
     using GameCatalogue.Services.Data.Interfaces;
     using GameCatalouge.Web.ViewModels.Home;
-    using Microsoft.AspNetCore.Mvc;
+	using static GameCatalogue.Common.GeneralConstants;
+	using Microsoft.AspNetCore.Mvc;
     using System.Diagnostics;
     public class HomeController : Controller
     {
@@ -15,6 +16,10 @@
 
         public async Task<IActionResult> Index()
         {
+            if (this.User.IsInRole(AdminRoleName))
+            {
+                return this.RedirectToAction("Index", "Home", new { Area = AdminAreaName });
+            }
             IEnumerable<IndexViewModel> viewModel =
                 await this.gameService.LastThreeGames();
             return View(viewModel);
