@@ -5,11 +5,13 @@ C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Web.Infrast
 C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Web.Infrastructure\bin\Debug\net6.0\GameCatalogue.Data.dll
 C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Web.Infrastructure\bin\Debug\net6.0\GameCatalogue.Data.Models.dll
 C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Web.Infrastructure\bin\Debug\net6.0\GameCatalogue.Services.Data.dll
+C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Web.Infrastructure\bin\Debug\net6.0\GameCatalogue.Services.Data.Models.dll
 C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Web.Infrastructure\bin\Debug\net6.0\GameCatalouge.Web.ViewModels.dll
 C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Web.Infrastructure\bin\Debug\net6.0\GameCatalogue.Services.Data.pdb
 C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Web.Infrastructure\bin\Debug\net6.0\GameCatalogue.Common.pdb
 C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Web.Infrastructure\bin\Debug\net6.0\GameCatalogue.Data.pdb
 C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Web.Infrastructure\bin\Debug\net6.0\GameCatalogue.Data.Models.pdb
+C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Web.Infrastructure\bin\Debug\net6.0\GameCatalogue.Services.Data.Models.pdb
 C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Web.Infrastructure\bin\Debug\net6.0\GameCatalouge.Web.ViewModels.pdb
 C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Web.Infrastructure\obj\Debug\net6.0\GameCatalogue.Web.Infrastructure.csproj.AssemblyReference.cache
 C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Web.Infrastructure\obj\Debug\net6.0\GameCatalogue.Web.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
@@ -21,5 +23,3 @@ C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Web.Infrast
 C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Web.Infrastructure\obj\Debug\net6.0\refint\GameCatalogue.Web.Infrastructure.dll
 C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Web.Infrastructure\obj\Debug\net6.0\GameCatalogue.Web.Infrastructure.pdb
 C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Web.Infrastructure\obj\Debug\net6.0\ref\GameCatalogue.Web.Infrastructure.dll
-C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Web.Infrastructure\bin\Debug\net6.0\GameCatalogue.Services.Data.Models.dll
-C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Web.Infrastructure\bin\Debug\net6.0\GameCatalogue.Services.Data.Models.pdb

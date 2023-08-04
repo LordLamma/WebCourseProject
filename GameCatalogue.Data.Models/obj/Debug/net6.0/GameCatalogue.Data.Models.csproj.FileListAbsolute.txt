@@ -1,4 +1,5 @@
 C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Data.Models\bin\Debug\net6.0\GameCatalogue.Data.Models.deps.json
+C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Data.Models\bin\Debug\net6.0\GameCatalogue.Data.Models.runtimeconfig.json
 C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Data.Models\bin\Debug\net6.0\GameCatalogue.Data.Models.dll
 C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Data.Models\bin\Debug\net6.0\GameCatalogue.Data.Models.pdb
 C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Data.Models\bin\Debug\net6.0\GameCatalogue.Common.dll
@@ -12,6 +13,5 @@ C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Data.Models
 C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Data.Models\obj\Debug\net6.0\GameCatalogue.Data.Models.dll
 C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Data.Models\obj\Debug\net6.0\refint\GameCatalogue.Data.Models.dll
 C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Data.Models\obj\Debug\net6.0\GameCatalogue.Data.Models.pdb
-C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Data.Models\obj\Debug\net6.0\ref\GameCatalogue.Data.Models.dll
-C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Data.Models\bin\Debug\net6.0\GameCatalogue.Data.Models.runtimeconfig.json
 C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Data.Models\obj\Debug\net6.0\GameCatalogue.Data.Models.genruntimeconfig.cache
+C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Data.Models\obj\Debug\net6.0\ref\GameCatalogue.Data.Models.dll

@@ -5,6 +5,18 @@
       "PackagePath": "staticwebassets\\GameCatalouge.Web.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Admin\\source\\repos\\SoftUniWeb-CourseProjectC#\\GameCatalouge.Web\\wwwroot\\Properties\\launchSettings.json",
+      "PackagePath": "staticwebassets\\Properties\\launchSettings.json"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\source\\repos\\SoftUniWeb-CourseProjectC#\\GameCatalouge.Web\\wwwroot\\Properties\\serviceDependencies.json",
+      "PackagePath": "staticwebassets\\Properties\\serviceDependencies.json"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\source\\repos\\SoftUniWeb-CourseProjectC#\\GameCatalouge.Web\\wwwroot\\Properties\\serviceDependencies.local.json",
+      "PackagePath": "staticwebassets\\Properties\\serviceDependencies.local.json"
+    },
+    {
       "Id": "C:\\Users\\Admin\\source\\repos\\SoftUniWeb-CourseProjectC#\\GameCatalouge.Web\\wwwroot\\css\\Font.css",
       "PackagePath": "staticwebassets\\css\\Font.css"
     },

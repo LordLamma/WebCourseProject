@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "LWg0VxYiVUQNfTCq44FrujwpqUpDY3gTOLjdcG9Gjmg=",
+  "Hash": "atXzRpnFTGoVSGiIpl5SmBs4ibca2QbwnET6VH61f04=",
   "Source": "GameCatalouge.Web",
   "BasePath": "_content/GameCatalouge.Web",
   "Mode": "Default",
@@ -2123,6 +2123,57 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\source\\repos\\SoftUniWeb-CourseProjectC#\\GameCatalouge.Web\\wwwroot\\Properties\\launchSettings.json",
+      "SourceId": "GameCatalouge.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\source\\repos\\SoftUniWeb-CourseProjectC#\\GameCatalouge.Web\\wwwroot\\",
+      "BasePath": "_content/GameCatalouge.Web",
+      "RelativePath": "Properties/launchSettings.json",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Properties\\launchSettings.json"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\source\\repos\\SoftUniWeb-CourseProjectC#\\GameCatalouge.Web\\wwwroot\\Properties\\serviceDependencies.json",
+      "SourceId": "GameCatalouge.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\source\\repos\\SoftUniWeb-CourseProjectC#\\GameCatalouge.Web\\wwwroot\\",
+      "BasePath": "_content/GameCatalouge.Web",
+      "RelativePath": "Properties/serviceDependencies.json",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Properties\\serviceDependencies.json"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\source\\repos\\SoftUniWeb-CourseProjectC#\\GameCatalouge.Web\\wwwroot\\Properties\\serviceDependencies.local.json",
+      "SourceId": "GameCatalouge.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\source\\repos\\SoftUniWeb-CourseProjectC#\\GameCatalouge.Web\\wwwroot\\",
+      "BasePath": "_content/GameCatalouge.Web",
+      "RelativePath": "Properties/serviceDependencies.local.json",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Properties\\serviceDependencies.local.json"
     }
   ]
 }

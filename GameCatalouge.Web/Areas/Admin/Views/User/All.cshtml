@@ -1,0 +1,37 @@
+﻿@model IEnumerable<AllUserViewModel>
+@{
+ ViewBag.Title = "All Users";
+}
+<h2 class="text-center">@ViewBag.Title</h2>
+<hr />
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th><label>Email</label></th>
+			<th><label>User name</label></th>
+			<th><label>Business Email</label></th>
+			<th><label>User Is Developer</label></th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var user in Model)
+		{
+			<tr>
+				<td><label>@user.Email</label></td>
+				<td><label>@user.UserName</label></td>
+				<td><label>@user.BusinessEmail</label></td>
+				<td>
+					@if (user.BusinessEmail != string.Empty)
+					{
+						<label>✔</label>
+					}
+					else
+					{
+						<label class="text-center">❌</label>
+					}
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>
+

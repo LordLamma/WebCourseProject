@@ -4,10 +4,12 @@ C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Services.Da
 C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Services.Data\bin\Debug\net6.0\GameCatalogue.Common.dll
 C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Services.Data\bin\Debug\net6.0\GameCatalogue.Data.dll
 C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Services.Data\bin\Debug\net6.0\GameCatalogue.Data.Models.dll
+C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Services.Data\bin\Debug\net6.0\GameCatalogue.Services.Data.Models.dll
 C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Services.Data\bin\Debug\net6.0\GameCatalouge.Web.ViewModels.dll
 C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Services.Data\bin\Debug\net6.0\GameCatalogue.Common.pdb
 C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Services.Data\bin\Debug\net6.0\GameCatalogue.Data.Models.pdb
 C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Services.Data\bin\Debug\net6.0\GameCatalogue.Data.pdb
+C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Services.Data\bin\Debug\net6.0\GameCatalogue.Services.Data.Models.pdb
 C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Services.Data\bin\Debug\net6.0\GameCatalouge.Web.ViewModels.pdb
 C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Services.Data\obj\Debug\net6.0\GameCatalogue.Services.Data.csproj.AssemblyReference.cache
 C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Services.Data\obj\Debug\net6.0\GameCatalogue.Services.Data.GeneratedMSBuildEditorConfig.editorconfig
@@ -19,5 +21,3 @@ C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Services.Da
 C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Services.Data\obj\Debug\net6.0\refint\GameCatalogue.Services.Data.dll
 C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Services.Data\obj\Debug\net6.0\GameCatalogue.Services.Data.pdb
 C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Services.Data\obj\Debug\net6.0\ref\GameCatalogue.Services.Data.dll
-C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Services.Data\bin\Debug\net6.0\GameCatalogue.Services.Data.Models.dll
-C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalogue.Services.Data\bin\Debug\net6.0\GameCatalogue.Services.Data.Models.pdb

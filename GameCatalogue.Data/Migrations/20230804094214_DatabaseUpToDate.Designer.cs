@@ -12,14 +12,14 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GameCatalogue.Data.Migrations
 {
     [DbContext(typeof(GameCatalogueDbContext))]
-    [Migration("20230724123125_Change game behaviour")]
-    partial class Changegamebehaviour
+    [Migration("20230804094214_DatabaseUpToDate")]
+    partial class DatabaseUpToDate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.14")
+                .HasAnnotation("ProductVersion", "6.0.20")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
@@ -74,6 +74,11 @@ namespace GameCatalogue.Data.Migrations
                         .HasMaxLength(2048)
                         .HasColumnType("nvarchar(2048)");
 
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(180)
@@ -86,28 +91,6 @@ namespace GameCatalogue.Data.Migrations
                     b.HasIndex("GenreId");
 
                     b.ToTable("Games");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Description = "Neon Blast: Enter a cybernetic world of neon-lit chaos. Unleash your skills, wield futuristic weapons, and fight against a corrupt regime. Fast-paced action, stunning visuals, and intense multiplayer battles await!",
-                            DeveloperId = new Guid("9c9e3599-5d8c-4e84-9fe9-97528e3b3025"),
-                            GenreId = 1,
-                            ImageURL = "https://media.istockphoto.com/id/993696960/photo/emoticon-smile-led.jpg?s=2048x2048&w=is&k=20&c=WzuM-npePurbItkdrOsVxy6PlWUaUu37MdGJDzUkVxQ=",
-                            Name = "Neon blast"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Description = "\"Dungeoneer\": Deadly dungeons, treasures await. Procedural, perilous. Battle, survive. Unravel secrets, embrace challenge. Permadeath, endless exploration. Conquer or fall. Good luck!",
-                            DeveloperId = new Guid("9c9e3599-5d8c-4e84-9fe9-97528e3b3025"),
-                            GenreId = 2,
-                            ImageURL = "https://media.istockphoto.com/id/1386931686/vector/dungeon-long-medieval-castle-corridor-with-torches-interior-of-ancient-palace-with-stone.jpg?s=2048x2048&w=is&k=20&c=kJEOjgDceG-1HjRWvFTEy7BGYoN0OX8sdygWppl_PYU=",
-                            Name = "Dungeoneer"
-                        });
                 });
 
             modelBuilder.Entity("GameCatalogue.Data.Models.Genre", b =>
@@ -172,6 +155,13 @@ namespace GameCatalogue.Data.Migrations
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DisplayName")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)")
+                        .HasDefaultValue("Def");
 
                     b.Property<string>("Email")
                         .HasMaxLength(256)
