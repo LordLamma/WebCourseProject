@@ -7,8 +7,8 @@
 	
 	ViewBag.Title = "Game Details";
 
-	bool isUserDeveloper = await DeveloperService.DeveloperExistsByUserId(this.User.GetId());
-	bool isDeveloperProducer = await DeveloperService.HasGameWithId(this.User.GetId(), Model.Id);
+	bool isUserDeveloper = await DeveloperService.DeveloperExistsByUserId(this.User.GetId()!);
+	bool isDeveloperProducer = await DeveloperService.HasGameWithId(this.User.GetId()!, Model.Id);
 }
 
 

@@ -2,22 +2,27 @@
 {
 	using GameCatalogue.Data.Models;
 	using GameCatalouge.Web.ViewModels.User;
-	using Microsoft.AspNetCore.Authentication;
+    using static GameCatalogue.Common.NotificationMessages;
+    using static GameCatalogue.Common.GeneralConstants;
+
+    using Microsoft.AspNetCore.Authentication;
 	using Microsoft.AspNetCore.Identity;
 	using Microsoft.AspNetCore.Mvc;
-
-	using static GameCatalogue.Common.NotificationMessages;
+    using Microsoft.Extensions.Caching.Memory;
 
 	public class UserController : Controller
 	{
 		private readonly SignInManager<ModdedUser> signInManager;
 		private readonly UserManager<ModdedUser> userManager;
+		private readonly IMemoryCache memoryCache;
 
         public UserController(SignInManager<ModdedUser> signInManager,
-								UserManager<ModdedUser> userManager)
+								UserManager<ModdedUser> userManager,
+                                IMemoryCache memoryCache)
         {
             this.signInManager = signInManager;
 			this.userManager = userManager;
+			this.memoryCache = memoryCache;
         }
 
         [HttpGet]
@@ -50,11 +55,12 @@
 			}
 
 			await this.signInManager.SignInAsync(user, isPersistent: false);
+			this.memoryCache.Remove(UsersCacheKey);
 			return this.RedirectToAction("Index", "Home");
 		}
 
 		[HttpGet]
-		public async Task<IActionResult> Login(string returnUrl = null) 
+		public async Task<IActionResult> Login(string returnUrl = null!) 
 		{
 			await HttpContext.SignOutAsync(IdentityConstants.ExternalScheme);
 

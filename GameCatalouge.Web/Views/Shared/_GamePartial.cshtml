@@ -4,8 +4,8 @@
 
 @inject IDeveloperService DeveloperService
 @{
-	bool isUserDeveloper = await DeveloperService.DeveloperExistsByUserId(this.User.GetId());
-	bool isDeveloperProducer = await DeveloperService.HasGameWithId(this.User.GetId(), Model.Id);
+	bool isUserDeveloper = await DeveloperService.DeveloperExistsByUserId(this.User.GetId()!);
+	bool isDeveloperProducer = await DeveloperService.HasGameWithId(this.User.GetId()!, Model.Id);
 }
 
 <div class="col-md-4">

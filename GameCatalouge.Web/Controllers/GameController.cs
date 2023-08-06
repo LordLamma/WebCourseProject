@@ -141,14 +141,14 @@
 			}
 
             bool isUserDeveloper = await this.developerService
-                .DeveloperExistsByUserId(this.User.GetId());
+                .DeveloperExistsByUserId(this.User.GetId()!);
             if (!isUserDeveloper && !this.User.IsAdmin()) 
             {
                 this.TempData[ErrorMessage] = "You must become a developer to edit game info";
                 return this.RedirectToAction("Become", "Developer");
             }
 
-            string? devId = await this.developerService.DeveloperIdByUserId(this.User.GetId());
+            string? devId = await this.developerService.DeveloperIdByUserId(this.User.GetId()!);
             bool isDeveloperProducer = await this.gameService
                 .IsDeveloperByIdProducerOfGameByIdAsync(id, devId!);
             if (!isDeveloperProducer && !this.User.IsAdmin())
@@ -189,14 +189,14 @@
 			}
 
 			bool isUserDeveloper = await this.developerService
-				.DeveloperExistsByUserId(this.User.GetId());
+				.DeveloperExistsByUserId(this.User.GetId()!);
 			if (!isUserDeveloper && !this.User.IsAdmin())
 			{
 				this.TempData[ErrorMessage] = "You must become a developer to edit game info";
 				return this.RedirectToAction("Become", "Developer");
 			}
 
-			string? devId = await this.developerService.DeveloperIdByUserId(this.User.GetId());
+			string? devId = await this.developerService.DeveloperIdByUserId(this.User.GetId()!);
 			bool isDeveloperProducer = await this.gameService
 				.IsDeveloperByIdProducerOfGameByIdAsync(id, devId!);
 			if (!isDeveloperProducer && !this.User.IsAdmin())
@@ -232,14 +232,14 @@
 			}
 
 			bool isUserDeveloper = await this.developerService
-				.DeveloperExistsByUserId(this.User.GetId());
+				.DeveloperExistsByUserId(this.User.GetId()!);
 			if (!isUserDeveloper && !this.User.IsAdmin())
 			{
 				this.TempData[ErrorMessage] = "You must become a developer to delete games";
 				return this.RedirectToAction("Become", "Developer");
 			}
 
-			string? devId = await this.developerService.DeveloperIdByUserId(this.User.GetId());
+			string? devId = await this.developerService.DeveloperIdByUserId(this.User.GetId()!);
 			bool isDeveloperProducer = await this.gameService
 				.IsDeveloperByIdProducerOfGameByIdAsync(id, devId!);
 			if (!isDeveloperProducer && !this.User.IsAdmin())
@@ -274,14 +274,14 @@
 			}
 
 			bool isUserDeveloper = await this.developerService
-				.DeveloperExistsByUserId(this.User.GetId());
+				.DeveloperExistsByUserId(this.User.GetId()!);
 			if (!isUserDeveloper && !this.User.IsAdmin())
 			{
 				this.TempData[ErrorMessage] = "You must become a developer to delete games";
 				return this.RedirectToAction("Become", "Developer");
 			}
 
-			string? devId = await this.developerService.DeveloperIdByUserId(this.User.GetId());
+			string? devId = await this.developerService.DeveloperIdByUserId(this.User.GetId()!);
 			bool isDeveloperProducer = await this.gameService
 				.IsDeveloperByIdProducerOfGameByIdAsync(id, devId!);
 			if (!isDeveloperProducer && !this.User.IsAdmin())

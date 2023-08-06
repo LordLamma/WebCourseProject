@@ -271,3 +271,4 @@ C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalouge.Web\obj\Deb
 C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalouge.Web\obj\Debug\net6.0\GameCatalouge.Web.csproj.CopyComplete
 C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalouge.Web\obj\Debug\net6.0\GameCatalouge.Web.genruntimeconfig.cache
 C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalouge.Web\obj\Debug\net6.0\ref\GameCatalouge.Web.dll
+C:\Users\Admin\source\repos\SoftUniWeb-CourseProjectC#\GameCatalouge.Web\obj\Debug\net6.0\scopedcss\Areas\Admin\Views\Shared\_AdminLayout.cshtml.rz.scp.css

@@ -40,7 +40,9 @@ namespace GameCatalouge.Web
 
 			builder.Services.AddApplicationServices(typeof(GameService));
 
-			builder.Services.ConfigureApplicationCookie(cnf =>
+            builder.Services.AddMemoryCache();
+
+            builder.Services.ConfigureApplicationCookie(cnf =>
 			{
 				cnf.LoginPath = "/User/Login";
 			});
@@ -51,6 +53,7 @@ namespace GameCatalouge.Web
 				{
 					options.Filters.Add<AutoValidateAntiforgeryTokenAttribute>();
 				});
+
 
 			var app = builder.Build();
 
@@ -74,11 +77,6 @@ namespace GameCatalouge.Web
 
 			app.UseAuthentication();
 			app.UseAuthorization();
-
-			//if (app.Environment.IsDevelopment())
-			//{
-			//	app.SeedAdmin(DevelopmentAdminEmail);
-			//}
 
 			app.UseEndpoints(config =>
 			{

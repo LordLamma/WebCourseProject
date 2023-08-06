@@ -37,7 +37,7 @@
         public async Task<IActionResult> Become(BecomeDeveloperFormModel model)
         {
 			string? userId = this.User.GetId();
-			bool isDeveloper = await this.developerService.DeveloperExistsByUserId(userId);
+			bool isDeveloper = await this.developerService.DeveloperExistsByUserId(userId!);
 			if (isDeveloper)
 			{
 				this.TempData[ErrorMessage] = "You are already a developer";
@@ -58,7 +58,7 @@
 
             try
             {
-				await this.developerService.Create(userId, model);
+				await this.developerService.Create(userId!, model);
 			}
             catch (Exception)
             {

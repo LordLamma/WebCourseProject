@@ -7,7 +7,7 @@
 
 @inject IDeveloperService DeveloperService
 @{
-    bool isUserDeveloper = await DeveloperService.DeveloperExistsByUserId(this.User.GetId());
+    bool isUserDeveloper = await DeveloperService.DeveloperExistsByUserId(this.User.GetId()!);
 }
 
 <ul class="navbar-nav">

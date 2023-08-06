@@ -10,5 +10,8 @@
         public const string AdminAreaName = "Admin";
         public const string AdminRoleName = "Admin";
         public const string DevelopmentAdminEmail = "admin@mail.com";
+
+        public const string UsersCacheKey = "UsersCacheKey";
+        public const int UsersCacheExpirationTime = 10;
     }
 }
