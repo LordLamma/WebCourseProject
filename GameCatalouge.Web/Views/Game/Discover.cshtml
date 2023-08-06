@@ -1,0 +1,15 @@
+﻿@model IEnumerable<GameAllViewModel>
+@{
+ ViewBag.Title = "Discover";
+}
+<div class="text-light bg-body text-lg-center mb-xxl-5 mt-xxl-3">
+	<font size="7">
+		Here are some games you might want to try out!
+	</font>
+</div>
+<div class="row">
+	@foreach (var game in Model)
+	{
+		<partial name="_GamePartial" model="@game" />
+	}
+</div>

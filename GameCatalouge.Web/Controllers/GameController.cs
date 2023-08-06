@@ -324,6 +324,23 @@
             }
         }
 
+        [HttpGet]
+        public async Task<IActionResult> Discover()
+        {
+            try
+            {
+                IEnumerable<GameAllViewModel> threeRandomGames = await this.gameService
+                .ThreeRandomGames(this.User.GetId()!);
+
+                return this.View(threeRandomGames);
+            }
+            catch (Exception)
+            {
+
+                return this.GeneralError();
+            }   
+        }
+
         private IActionResult GeneralError()
         {
 			this.TempData[ErrorMessage] = "An unexpected error occured! Please try again later or contact an administrator";

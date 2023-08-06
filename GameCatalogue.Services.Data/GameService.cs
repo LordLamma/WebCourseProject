@@ -4,7 +4,6 @@
 	using GameCatalogue.Data.Models;
 	using GameCatalogue.Services.Data.Interfaces;
 	using GameCatalogue.Services.Data.Models.Game;
-	using GameCatalouge.Web.ViewModels.Discover;
     using GameCatalouge.Web.ViewModels.Developer;
 	using GameCatalouge.Web.ViewModels.Game;
 	using GameCatalouge.Web.ViewModels.Home;
@@ -228,9 +227,24 @@
             return lastThreeGames;
         }
 
-        public Task<IEnumerable<DiscoverViewModel>> ThreeRandomGames()
+        public async Task<IEnumerable<GameAllViewModel>> ThreeRandomGames(string userId)
         {
-            throw new NotImplementedException();
+            IEnumerable<GameAllViewModel> threeRandomGames = await this.dbContext
+                .Games
+                .Include(g => g.Developer)
+                .Where(g => g.Developer.UserId.ToString() != userId)
+                .OrderBy(g => Guid.NewGuid())
+                .Take(3)
+                .Select (g=> new GameAllViewModel()
+                {
+                    Id = g.Id,
+                    Name = g.Name,
+                    ImageURL = g.ImageURL,
+                    Genre = g.Genre.Name
+                })
+                .ToListAsync();
+
+            return threeRandomGames;
         }
     }
 }
