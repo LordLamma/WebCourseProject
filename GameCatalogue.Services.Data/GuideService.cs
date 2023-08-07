@@ -9,6 +9,7 @@
     using Microsoft.EntityFrameworkCore;
     using GameCatalouge.Web.ViewModels.Guide.Enums;
     using System.Security.Principal;
+    using GameCatalouge.Web.ViewModels.Game;
 
     public class GuideService : IGuideService
     {
@@ -35,9 +36,9 @@
             guidesQuery = queryModel.GuideSorting switch
             {
                 GuideSorting.Newest => guidesQuery
-                .OrderByDescending(gu => gu.CreatedOn),
-                GuideSorting.Oldest => guidesQuery
                 .OrderBy(gu => gu.CreatedOn),
+                GuideSorting.Oldest => guidesQuery
+                .OrderByDescending(gu => gu.CreatedOn),
                 _ => guidesQuery
                     .OrderByDescending(gu => gu.CreatedOn)
             };
@@ -75,6 +76,96 @@
             await dbContext.SaveChangesAsync();
 
             return guide.Id.ToString();
+        }
+
+        public async Task DeleteGuideByIdAsync(string guideId)
+        {
+            Guide guide = await this.dbContext
+                .Guides
+                .Where(gu => gu.IsDeleted == false)
+                .FirstAsync(gu => gu.Id.ToString() == guideId);
+
+            guide.IsDeleted = true;
+
+            await this.dbContext.SaveChangesAsync();
+        }
+
+        public async Task EditGuideByIdAndFormModel(string guideId, GuideFormModel formModel)
+        {
+            Guide guide = await this.dbContext
+                .Guides
+                .Where(gu => gu.IsDeleted == false)
+                .FirstAsync(gu => gu.Id.ToString() == guideId);
+
+            guide.Title = formModel.Title;
+            guide.Content = formModel.Content;
+
+            await this.dbContext.SaveChangesAsync();
+        }
+
+        public async Task<bool> ExistsByIdAsync(string id)
+        {
+            bool result = await this.dbContext
+                .Guides
+                .AnyAsync(gu => gu.Id.ToString() == id);
+
+            return result;
+        }
+
+        public async Task<GuideDetailsViewModel?> GetDetailsByIdAsync(string id)
+        {
+            Guide guide = await this.dbContext
+                .Guides
+                .Include(gu => gu.Author)
+                .Where(gu => gu.IsDeleted == false)
+                .FirstAsync(gu => gu.Id.ToString() == id);
+
+            return new GuideDetailsViewModel
+            {
+                Id = guide.Id,
+                Title = guide.Title,
+                Content = guide.Content,
+                AuthorName = guide.Author.UserName
+            };
+        }
+
+        public async Task<GuidePreDeleteViewModel> GetGuideDetailsForDeleteByIdAsync(string guideId)
+        {
+            Guide guide = await this.dbContext
+                .Guides
+                .Where(gu => gu.IsDeleted == false)
+                .FirstAsync(gu => gu.Id.ToString() == guideId);
+
+            return new GuidePreDeleteViewModel
+            {
+                Title = guide.Title,
+                Content = guide.Content
+            };
+            throw new NotImplementedException();
+        }
+
+        public async Task<GuideFormModel> GetGuideForEditByIdAsync(string guideId)
+        {
+            Guide guide = await this.dbContext
+                .Guides
+                .Where(gu => gu.IsDeleted == false)
+                .FirstAsync(gu => gu.Id.ToString() == guideId);
+
+            return new GuideFormModel
+            {
+                Title = guide.Title,
+                Content = guide.Content,
+            };
+        }
+
+        public async Task<bool> IsUserByIdWriterOfGuideById(string guideId, string userId)
+        {
+            Guide guide = await this.dbContext
+                .Guides
+                .Where(gu => gu.IsDeleted == false)
+                .FirstAsync(gu => gu.Id.ToString() == guideId);
+
+            return guide.AuthorId.ToString() == userId;
         }
     }
 }
