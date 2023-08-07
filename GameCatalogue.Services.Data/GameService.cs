@@ -10,7 +10,6 @@
 	using GameCatalouge.Web.Views.Game.Enums;
 	using Microsoft.AspNetCore.Identity;
 	using Microsoft.EntityFrameworkCore;
-	using System.Data.SqlTypes;
 
 	public class GameService : IGameService
     {

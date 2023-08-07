@@ -6,6 +6,7 @@
 
         public const int StartingPage = 1;
         public const int AllowedGamesPerPage = 3;
+        public const int AllowedGuidesPerPage = 3;
 
         public const string AdminAreaName = "Admin";
         public const string AdminRoleName = "Admin";

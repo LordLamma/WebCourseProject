@@ -8,7 +8,7 @@
     {
         public Game()
         {
-            //this.Comments = new HashSet<Comment>();
+
         }
 
         [Key]

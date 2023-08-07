@@ -19,6 +19,8 @@
 
         public DbSet<Developer> Developers { get; set; } = null!;
 
+        public DbSet<Guide> Guides { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             Assembly assembly = Assembly.GetAssembly(typeof(GameCatalogueDbContext)) ?? 

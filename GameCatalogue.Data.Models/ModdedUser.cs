@@ -9,10 +9,13 @@
         public ModdedUser()
         {
             this.Id = Guid.NewGuid();
+            this.WrittenGuides = new HashSet<Guide>();
         }
 
         [Required]
         [MaxLength(DisplayNameMaxLength)]
         public string DisplayName { get; set; } = null!;
+
+        public virtual ICollection<Guide> WrittenGuides { get; set; }
     }
 }

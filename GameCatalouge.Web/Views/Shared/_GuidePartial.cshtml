@@ -1,0 +1,33 @@
+﻿@using GameCatalogue.Services.Data.Interfaces;
+@using GameCatalogue.Web.Infrastructure;
+@model GuideAllViewModel
+
+@inject IDeveloperService DeveloperService
+@{
+	bool isUserDeveloper = await DeveloperService.DeveloperExistsByUserId(this.User.GetId()!);
+	bool isDeveloperProducer = await DeveloperService.HasGameWithId(this.User.GetId()!, Model.Id);
+}
+
+<div class="col-md-4">
+	<div class="card mb-3 ">
+		<div class="card-body text-center">
+			<h4>@Model.Title</h4>
+			<h5 class="mt-3 text">by @Model.AuthorName</h5>
+			<br />
+			<a asp-controller="Guide" asp-action="Details" asp-route-id="@Model.Id"
+				class="btn btn-success">Details</a>
+			@if (this.User.Identity?.IsAuthenticated ?? false)
+			{
+				@if (Model.AuthorName == this.User.Identity.Name || this.User.IsAdmin())
+				{
+					<a asp-controller="Guide" asp-action="Edit" asp-route-id="@Model.Id"
+					class="btn btn-warning">Edit</a>
+					<a asp-controller="Guide" asp-action="Delete" asp-route-id="@Model.Id"
+					class="btn btn-danger">Delete</a>
+				}
+				<p></p>
+			}
+		</div>
+	</div>
+</div>
+

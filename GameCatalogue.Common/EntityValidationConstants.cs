@@ -42,10 +42,13 @@
 			public const int PassWordMaxLength = 100;
 		}
 
-        public static class Comment
+        public static class Guide
         {
-            public const int MessageMinLenght = 4;
-            public const int MessageMaxLength = 200;
+            public const int TitleMaxLength = 150;
+            public const int TitleMinLength = 15;
+
+            public const int ContentMaxLength = 5000;
+            public const int ContentMinLength = 20;
         }
     }
 }

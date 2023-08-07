@@ -1,0 +1,97 @@
+﻿@model GuideAllQueryModel
+@{
+ ViewBag.Title = "All Guides";
+}
+<h2 class="text-center">@ViewBag.Title</h2>
+<hr />
+<form method="get">
+	<div class="row">
+		<div class="form-group col-md-4 d-flex justify-content-between">
+			<div class="form-group col-md-7">
+				<label asp-for="GuidesPerPage"></label>
+				<select asp-for="GuidesPerPage" class="form-control">
+					<option value="3">3</option>
+					<option value="6">6</option>
+					<option value="9">9</option>
+				</select>
+			</div>
+		</div>
+		<div class="form-group col-md-4">
+			<label asp-for="SearchString"></label>
+			<input asp-for="SearchString" class="form-control" placeholder="Keyword">
+		</div>
+		<div class="form-group col-md-4">
+			<div class="form-group">
+				<label asp-for="GuideSorting"></label>
+				<select asp-for="GuideSorting" class="form-control">
+					<option value="0">Alphabetical</option>
+					<option value="1">Newest</option>
+					<option value="2">Oldest</option>
+				</select>
+			</div>
+		</div>
+		<div class="text-center">
+			<div class="form-group mt-4 p-2">
+				<input type="submit" value="Search" class="btn btn-primary" />
+			</div>
+			
+		</div>
+	</div>
+</form>
+
+<div class="text-center mt-1 mb-3">
+	<a class="btn btn-primary" 
+		asp-controller="Guide"
+		asp-action="Add">
+		Write a guide
+	</a>
+</div>
+
+@{
+	int previousPage = Model.CurrentPage - 1;
+	if (previousPage < 1)
+	{
+	previousPage = 1;
+	}
+	int maxPage = (int)Math.Ceiling((double)Model.TotalGuides / Model.GuidesPerPage);
+}
+
+<div class="row mb-5">
+	<div class="col-md-6 d-grid gap-2 d-md-flex justify-content-md-start">
+		<a class="btn btn-primary @(Model.CurrentPage == 1 ? "disabled" : string.Empty)"
+			asp-controller="Game"
+			asp-action="All"
+			asp-route-currentPage="@previousPage"
+			asp-route-searchString="@Model.SearchString"
+			asp-route-gameSorting="@((int)Model.GuideSorting)"><<</a>
+	</div>
+
+	@{
+	bool shouldNextPageButtonBeDisabled = Model.CurrentPage == maxPage ||
+	!Model.Guides.Any();
+	}
+
+	<div class="col-md-6 d-grid gap-2 d-md-flex justify-content-md-end">
+		<a class="btn btn-primary
+			@(shouldNextPageButtonBeDisabled ? "disabled" : string.Empty)"
+			asp-controller="Game"
+			asp-action="All"
+			asp-route-currentPage="@(Model.CurrentPage + 1)"
+			asp-route-searchString="@Model.SearchString"
+			asp-route-gameSorting="@((int)Model.GuideSorting)">>></a>
+	</div>
+</div>
+
+@if (!Model.Guides.Any())
+{
+ <h2 class="text-center">No guides corespond to the provided criteria</h2>
+}
+
+<div class="row">
+	@foreach (var game in Model.Guides)
+	{
+		<partial name="_GuidePartial" model="@game" />
+	}
+</div>
+
+

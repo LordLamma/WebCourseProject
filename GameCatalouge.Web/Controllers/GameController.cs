@@ -6,7 +6,6 @@
 	using GameCatalouge.Web.ViewModels.Game;
 	using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
-	using System.Reflection.Metadata.Ecma335;
 	using static GameCatalogue.Common.NotificationMessages;
 
     [Authorize]
