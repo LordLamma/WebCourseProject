@@ -8,6 +8,7 @@
 	using GameCatalouge.Web.ViewModels.Game;
 	using GameCatalouge.Web.ViewModels.Home;
 	using GameCatalouge.Web.Views.Game.Enums;
+
 	using Microsoft.AspNetCore.Identity;
 	using Microsoft.EntityFrameworkCore;
 
@@ -15,7 +16,7 @@
     {
         private readonly GameCatalogueDbContext dbContext;
 
-        public GameService(GameCatalogueDbContext dbContext, UserManager<ModdedUser> userManager)
+        public GameService(GameCatalogueDbContext dbContext)
         {
             this.dbContext = dbContext;
         }

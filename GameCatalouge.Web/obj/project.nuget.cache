@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "sSFPssJ53P0VLikURPNGOLlHTTR7QgBDtZ6AgxgJTD3JNxCJcY8kwsXYL/40MQqNAOcDGKwiN+SvqLXQ7TgHLg==",
+  "dgSpecHash": "dFJYdldFSHIo/IzMEznBkbUE7YfcT5XMEtetciXmOvD3FGbt/BSNa8f4jRFWWUByPZ6RaeslCG+SnNoCs4vipQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Admin\\source\\repos\\SoftUniWeb-CourseProjectC#\\GameCatalouge.Web\\GameCatalouge.Web.csproj",
   "expectedPackageFiles": [
@@ -59,7 +59,7 @@
     "C:\\Users\\Admin\\.nuget\\packages\\messagepackanalyzer\\2.1.152\\messagepackanalyzer.2.1.152.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.20\\microsoft.aspnetcore.cryptography.internal.6.0.20.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\6.0.20\\microsoft.aspnetcore.cryptography.keyderivation.6.0.20.nupkg.sha512",
-    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.diagnostics.entityframeworkcore\\6.0.14\\microsoft.aspnetcore.diagnostics.entityframeworkcore.6.0.14.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.diagnostics.entityframeworkcore\\6.0.20\\microsoft.aspnetcore.diagnostics.entityframeworkcore.6.0.20.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\6.0.20\\microsoft.aspnetcore.identity.entityframeworkcore.6.0.20.nupkg.sha512",

@@ -7,7 +7,7 @@
 	using Microsoft.EntityFrameworkCore;
     using System.Threading.Tasks;
 
-    internal class DeveloperService : IDeveloperService
+    public class DeveloperService : IDeveloperService
     {
         private readonly GameCatalogueDbContext dbContext;
 

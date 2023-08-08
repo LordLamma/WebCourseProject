@@ -663,10 +663,10 @@
           }
         }
       },
-      "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore/6.0.14": {
+      "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore/6.0.20": {
         "type": "package",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Relational": "6.0.14"
+          "Microsoft.EntityFrameworkCore.Relational": "6.0.20"
         },
         "compile": {
           "lib/net6.0/Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll": {
@@ -3985,8 +3985,8 @@
         "dependencies": {
           "GameCatalogue.Common": "1.0.0",
           "GameCatalogue.Data.Models": "1.0.0",
-          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.14",
-          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.14"
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.20",
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.20"
         },
         "compile": {
           "bin/placeholder/GameCatalogue.Data.dll": {}
@@ -4000,7 +4000,7 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "GameCatalogue.Common": "1.0.0",
-          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.14"
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.20"
         },
         "compile": {
           "bin/placeholder/GameCatalogue.Data.Models.dll": {}
@@ -4900,10 +4900,10 @@
         "microsoft.aspnetcore.cryptography.keyderivation.nuspec"
       ]
     },
-    "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore/6.0.14": {
-      "sha512": "72MfWzruSneHITADt6AlnrFE4oJdmElj9DXoVzD4f02nV97U51ZgXWj7vuf0rLofLAlLXHg1v0x+4yHD7Gi/4Q==",
+    "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore/6.0.20": {
+      "sha512": "O3zb2ldZGw7eRE8KepnOi2ajLO6CE3LRvnltycZ2LTo4aoO6vF6P5z2UGeM6vzz+SrbFHaCXiyrn0gJ6jnZz2w==",
       "type": "package",
-      "path": "microsoft.aspnetcore.diagnostics.entityframeworkcore/6.0.14",
+      "path": "microsoft.aspnetcore.diagnostics.entityframeworkcore/6.0.20",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -4911,7 +4911,7 @@
         "THIRD-PARTY-NOTICES.TXT",
         "lib/net6.0/Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll",
         "lib/net6.0/Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.xml",
-        "microsoft.aspnetcore.diagnostics.entityframeworkcore.6.0.14.nupkg.sha512",
+        "microsoft.aspnetcore.diagnostics.entityframeworkcore.6.0.20.nupkg.sha512",
         "microsoft.aspnetcore.diagnostics.entityframeworkcore.nuspec"
       ]
     },
@@ -11378,7 +11378,7 @@
       "GameCatalogue.Services.Data.Models >= 1.0.0",
       "GameCatalogue.Web.Infrastructure >= 1.0.0",
       "GameCatalouge.Web.ViewModels >= 1.0.0",
-      "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore >= 6.0.14",
+      "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore >= 6.0.20",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.20",
       "Microsoft.AspNetCore.Identity.UI >= 6.0.20",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.20",
@@ -11449,7 +11449,7 @@
         "dependencies": {
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
             "target": "Package",
-            "version": "[6.0.14, )"
+            "version": "[6.0.20, )"
           },
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
             "target": "Package",

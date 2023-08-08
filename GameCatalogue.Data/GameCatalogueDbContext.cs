@@ -11,6 +11,7 @@
         public GameCatalogueDbContext(DbContextOptions<GameCatalogueDbContext> options)
             : base(options)
         {
+
         }
 
         public DbSet<Genre> Genres { get; set; } = null!;

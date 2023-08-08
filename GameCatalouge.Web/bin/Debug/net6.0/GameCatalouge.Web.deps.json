@@ -15,7 +15,7 @@
           "GameCatalogue.Services.Data.Models": "1.0.0",
           "GameCatalogue.Web.Infrastructure": "1.0.0",
           "GameCatalouge.Web.ViewModels": "1.0.0",
-          "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "6.0.14",
+          "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "6.0.20",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.20",
           "Microsoft.AspNetCore.Identity.UI": "6.0.20",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.20",
@@ -611,14 +611,14 @@
           }
         }
       },
-      "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore/6.0.14": {
+      "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore/6.0.20": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Relational": "6.0.20"
         },
         "runtime": {
           "lib/net6.0/Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll": {
-            "assemblyVersion": "6.0.14.0",
-            "fileVersion": "6.0.1423.7403"
+            "assemblyVersion": "6.0.20.0",
+            "fileVersion": "6.0.2023.32106"
           }
         }
       },
@@ -3045,12 +3045,12 @@
       "path": "microsoft.aspnetcore.cryptography.keyderivation/6.0.20",
       "hashPath": "microsoft.aspnetcore.cryptography.keyderivation.6.0.20.nupkg.sha512"
     },
-    "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore/6.0.14": {
+    "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore/6.0.20": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-72MfWzruSneHITADt6AlnrFE4oJdmElj9DXoVzD4f02nV97U51ZgXWj7vuf0rLofLAlLXHg1v0x+4yHD7Gi/4Q==",
-      "path": "microsoft.aspnetcore.diagnostics.entityframeworkcore/6.0.14",
-      "hashPath": "microsoft.aspnetcore.diagnostics.entityframeworkcore.6.0.14.nupkg.sha512"
+      "sha512": "sha512-O3zb2ldZGw7eRE8KepnOi2ajLO6CE3LRvnltycZ2LTo4aoO6vF6P5z2UGeM6vzz+SrbFHaCXiyrn0gJ6jnZz2w==",
+      "path": "microsoft.aspnetcore.diagnostics.entityframeworkcore/6.0.20",
+      "hashPath": "microsoft.aspnetcore.diagnostics.entityframeworkcore.6.0.20.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Http.Abstractions/2.2.0": {
       "type": "package",
