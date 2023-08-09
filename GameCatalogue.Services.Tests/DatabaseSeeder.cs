@@ -8,8 +8,10 @@
         public static ModdedUser RegularUser;
         public static ModdedUser DeveloperUser;
         public static Developer Developer;
-        public static Genre Genre;
+        public static Genre GenreOne;
+        public static Genre GenreTwo;
         public static Game Game;
+        public static Guide Guide;
 
         public static void SeedDatabase(GameCatalogueDbContext dbContext)
         {
@@ -53,9 +55,14 @@
                 User = DeveloperUser
             };
 
-            Genre = new Genre()
+            GenreOne = new Genre()
             {
                 Name = "Shooter"
+            };
+
+            GenreTwo = new Genre()
+            {
+                Name = "Roguelike"
             };
 
             Game = new Game()
@@ -63,15 +70,24 @@
                 Name = "Neon blast",
                 Description = "Fun fast paced shooter game with cool colors",
                 ImageURL = "https://img.freepik.com/free-vector/neon-frame-template_23-2149088155.jpg?w=1800&t=st=1691340667~exp=1691341267~hmac=f878f9a376d3ef78758dd57025d6bd0f174b517c6fc25ea0e86147ef5cb1077d",
-                Genre = Genre,
+                Genre = GenreOne,
                 Developer = Developer,
+            };
+
+            Guide = new Guide()
+            {
+                Title = "Neon blast quickstart guide",
+                Content = "This is a very good guide on how to start neon blast",
+                Author = RegularUser
             };
 
             dbContext.Users.Add(RegularUser);
             dbContext.Users.Add(DeveloperUser);
             dbContext.Developers.Add(Developer);
-            dbContext.Genres.Add(Genre);
+            dbContext.Genres.Add(GenreOne);
+            dbContext.Genres.Add(GenreTwo);
             dbContext.Games.Add(Game);
+            dbContext.Guides.Add(Guide);
 
 
             dbContext.SaveChanges();

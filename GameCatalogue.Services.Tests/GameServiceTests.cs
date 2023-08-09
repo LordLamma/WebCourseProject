@@ -4,10 +4,10 @@
     using GameCatalogue.Services.Data.Interfaces;
     using GameCatalogue.Services.Data;
     using static GameCatalogue.Services.Tests.DatabaseSeeder;
-
-    using Microsoft.EntityFrameworkCore;
     using GameCatalouge.Web.ViewModels.Game;
     using GameCatalogue.Services.Data.Models.Game;
+
+    using Microsoft.EntityFrameworkCore;
 
     internal class GameServiceTests
     {
@@ -143,7 +143,7 @@
         }
 
         [Test]
-        public async Task CreateShouldAddANewGameToTheDatabaseWithInformationInside()
+        public async Task CreateShouldAddANewGameToTheDatabase()
         {
             int beforeCount = this.dbContext.Games.Count();
             string devId = Developer.Id.ToString();
@@ -188,7 +188,7 @@
         {
             AllGamesQueryModel model = new AllGamesQueryModel()
             {
-                Genre = Genre.Name,
+                Genre = GenreOne.Name,
                 SearchString = "neon",
                 GameSorting = (GameCatalouge.Web.Views.Game.Enums.GameSorting)1
             };
@@ -209,7 +209,7 @@
         {
             AllGamesQueryModel model = new AllGamesQueryModel()
             {
-                Genre = Genre.Name,
+                Genre = GenreOne.Name,
                 SearchString = "neon",
                 GameSorting = (GameCatalouge.Web.Views.Game.Enums.GameSorting)2
             };
@@ -230,7 +230,7 @@
         {
             AllGamesQueryModel model = new AllGamesQueryModel()
             {
-                Genre = Genre.Name,
+                Genre = GenreOne.Name,
                 SearchString = "neon",
                 GameSorting = (GameCatalouge.Web.Views.Game.Enums.GameSorting)0
             };
@@ -251,7 +251,7 @@
         {
             AllGamesQueryModel model = new AllGamesQueryModel()
             {
-                Genre = Genre.Name,
+                Genre = GenreOne.Name,
                 SearchString = "neon"
             };
 

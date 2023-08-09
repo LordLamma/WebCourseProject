@@ -8,14 +8,12 @@
     using Microsoft.AspNetCore.Identity;
     using Microsoft.EntityFrameworkCore;
     using GameCatalouge.Web.ViewModels.Guide.Enums;
-    using System.Security.Principal;
-    using GameCatalouge.Web.ViewModels.Game;
 
     public class GuideService : IGuideService
     {
         private readonly GameCatalogueDbContext dbContext;
 
-        public GuideService(GameCatalogueDbContext dbContext, UserManager<ModdedUser> userManager)
+        public GuideService(GameCatalogueDbContext dbContext)
         {
             this.dbContext = dbContext;
         }
