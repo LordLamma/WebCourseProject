@@ -12,7 +12,7 @@
 <hr />
 
 <div class="container" style="display:inline">
-	<p class="text-center" style="font-size:20px;">@Model.Content</p>
+	<p class="" style="font-size:20px;">@Model.Content</p>
 	<p></p>
 	<p class="card-text">Writen by: @Model.AuthorName</p>
 	<div class="form-inline">
@@ -20,8 +20,8 @@
 		{
 			@if (Model.AuthorName == this.User.Identity.Name || this.User.IsAdmin())
 			{
-				<a class="btn btn-warning" asp-controller="Game" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
-				<a class="ml-2 btn btn-danger" asp-controller="Game" asp-action="Delete" asp-route-id="@Model.Id">Delete</a>
+				<a class="btn btn-warning" asp-controller="Guide" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+				<a class="ml-2 btn btn-danger" asp-controller="Guide" asp-action="Delete" asp-route-id="@Model.Id">Delete</a>
 			}
 		}
 	</div>
